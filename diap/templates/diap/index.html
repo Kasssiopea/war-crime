@@ -1,0 +1,295 @@
+{% extends 'diap/base.html' %}
+{% load i18n %}
+{% load static %}
+{% load image_tag %}
+
+
+    <!--  Page CSS  -->
+    {% block page_css %}
+        <link rel="stylesheet" href="{% static 'css/site/index.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/templatemo-pod-talk.css' %}">
+        <style>
+            P.item { margin-top: 10px; margin-bottom: 8px; font-family: arial, helvetica, verdana, sans-serif; padding-bottom: 10px; border-bottom: 1px solid #999; line-height: 1.45em;}
+            a { color: #00499B; }
+            #items { font-size: 13px; }
+            SPAN.description { color: #222; line-height: 1.25em; font-size: 17px; }
+            SPAN.date { color: #888; font-size: 11px; }
+            SPAN.date A { color: #247; }
+            SPAN.grey { color: #888; font-weight: bold; font-size: 22px; }
+
+            .parent-div { display: flex; align-items: stretch; }
+            .parent-div img { height: 100%; }
+
+        </style>
+    {% endblock %}
+
+
+    {#  Main content  #}
+    {% block main_content %}
+        <section class="mein_wiew">
+            <div class="container-fluid">
+                <div class="row" id="text_viev">
+                    <div class="col"></div>
+                    <div class="col-10">
+                        <div class="px-4 py-5 my-5 text-center">
+                            <!-- Changes start here -->
+                            <h3 class="fw-bold mb-4">
+                                {% trans "Нами вже зібрано" %}
+                            </h3>
+                            <h1 class="display-1 mb-4 fw-bold text-danger">60557</h1> <!-- {{persons_counter}} -->
+                            <h3 class="mb-2 fw-bold">
+                                {% trans "фактів, про втрати російської армії та інших військових формувань, задіяних у збройній агресії російської федерації проти України." %}
+                            </h3>
+                            <h3 class="mb-2 fw-bold">
+                                {% trans "Інформація, викладена на сайті, отримана з відкритих джерел." %}
+                            </h3>
+                            <!-- <h3 class="mb-2 fw-bold">
+                                Усі дописи ретельно перевіряються нашими фахівцями та публікуються виключно достовірні дані.
+                            </h3> -->
+                            <!-- Changes end here -->
+                        </div>
+                    </div>
+                    <div class="col"></div>
+                </div>
+            </div>
+        </section>
+        <section class="hero-section p-4">
+            <!-- <div class="container"> -->
+                <div class="row">
+                    <div class="col-lg-9 col-12" style="margin-left: auto;margin-right: auto;">
+                        <div class="text-center mb-2 pb-2">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-xl-3 col-lg-4 col-md-3 col-sm-2"></div>
+                                    <div class="col shadow" id="main_label_carousel">
+                                        <h1 class="text-dark">
+                                            {% trans "Нові публікації" %}
+                                        </h1>
+                                    </div>
+                                    <div class="col-xl-3 col-lg-4 col-md-3 col-sm-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel1 owl-carousel owl-theme">
+                            {% for person in persons %}
+                                {% if person.images.first.image %}
+                                    <div class="owl-carousel-info-wrap item" style="height: 500px">
+                                             <img src="{{ person.images.first.image.url }}"
+                                             class="owl-carousel-image img-fluid" alt=""
+                                                  style="
+                                                        width: 100%;
+                                                        height: 100%;
+                                                        object-fit: cover;">
+                                        <div class="owl-carousel-info">
+                                            <h5 class="mb-2">
+                                                {{ person.last_name| default_if_none:"" }}
+                                                {{ person.first_name| default_if_none:"" }}
+                                                {{ person.middle_name | default_if_none:"" }}
+                                            </h5>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <hr class="my-5">
+        <!-- Recent changes start -->
+        <div class="hero-section p-4">
+            
+            <div class="text-center mb-4 pb-2">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-4 col-md-3 col-sm-2"></div>
+                        <div class="col shadow" >
+                            <h1 class="text-dark">
+                                {% trans "Наші Партнери" %}
+                            </h1>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-3 col-sm-2"></div>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-5">
+
+            <!-- </div> -->
+            <div class="row flex-column-reverse flex-lg-row">
+                <div class="col-lg-9 border-right">
+                    <div class="row">
+                        {% for partner in partners %}
+                            <div class="col-lg-4 col-md-4 mb-4">
+                                <div>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6">
+                                            <a href="{{ partner.url }}" target="_blank">
+                                                <img src="{{ partner.image.url}}"
+                                            class="img-fluid centr" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6" style="display: flex; justify-content: center; align-items: center; padding-right: calc(var(--bs-gutter-x) * .1); padding-left: calc(var(--bs-gutter-x) * .1);">
+                                            <div class="container" style="word-wrap: break-word;">
+                                                <h6 class="mb-2 text-center">
+                                                    <a class="partners-static" href="{{ partner.url }}" target="_blank">{{ partner.name }}</a>
+                                                </h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+{#      NPU          #}
+                <div class="col-lg-3 col-md-12 centr border-bottom">
+                    <div class="row">
+                        <div class="col-sm-3 col-md-3 col-lg-12">
+                            <div class="row mb-4">
+                                <div class="col-lg-12 col-sm-12">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6">
+                                            <a href="https://mvs.gov.ua" target="_blank">
+                                                <img src="{% static 'image/hero/MVS.png' %}"
+                                            class="img-fluid centr" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6" style="display: flex; justify-content: center; align-items: center;">
+                                            <div>
+                                                <h4 class="mb-2 text-center">
+                                                    <a class="partners-static" href="https://mvs.gov.ua/" target="_blank">Міністерство внутрішніх справ України</a>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-12">
+                            <div class="row mb-4">
+                                <div class="col-lg-12 col-sm-12">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6">
+                                            <a href="https://www.npu.gov.ua/" target="_blank">
+                                                <img src="{% static 'image/hero/npu.png' %}"
+                                            class="img-fluid centr" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6" style="display: flex; justify-content: center; align-items: center;">
+                                            <h4 class="mb-2 text-center">
+                                                <a class="partners-static" href="https://www.npu.gov.ua/" target="_blank">Національна поліція України</a>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-12">
+                            <div class="row mb-4">
+                                <div class="col-lg-12 col-sm-12">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12">
+                                            <a href="https://cyberpolice.gov.ua/" target="_blank">
+                                                <img src="{% static 'image/hero/cyberpol.jpg' %}"
+                                            class="img-fluid centr" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+                        <div class="col-sm-3 col-md-3 col-lg-12">
+                            <div class="row mb-4">
+                                <div class="col-lg-12 col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-md-6">
+                                            <a href="https://hochuzhit.com" target="_blank">
+                                                <img src="{% static 'image/hero/hochuzhit.png' %}"
+                                            class="img-fluid centr" height="100px" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6" style="display: flex; justify-content: center; align-items: center;">
+                                            <h4 class="mb-2 text-center">
+                                                <a class="partners-static" href="https://hochuzhit.com" target="_blank" style="font-size: 17px;">Единый центр приема обращений военнослужащих РФ по сдаче в плен "Хочу жить"</a>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Recent changes end -->
+        <hr class="my-5">
+
+        <section>  
+            <!-- Recent changes start -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="text-center mb-4 pb-2">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xl-3 col-lg-4 col-md-3 col-sm-2"></div>
+                                <div class="col shadow" id="main_label_carousel">
+                                    <h1 class="text-dark">
+                                        {% trans "Останні новини" %}
+                                    </h1>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-3 col-sm-2"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                    <!-- <h2 class="text-center mb-4"> Останні новини</h2> -->
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12 news-text">
+                            <div class="card mb-3">
+                                <div class="col-lg-6 col-lg-12">
+                                    <div>
+                                        <script type="text/javascript" src="https://feed.informer.com/widgets/2YGMOJN3CH.js"></script>
+                                        <noscript>
+                                            <a href="https://feed.informer.com/widgets/2YGMOJN3CH.html">"News main"</a>
+                                            Powered by
+                                            <a href="https://feed.informer.com/">RSS Feed Informer</a>
+                                        </noscript>
+                                        
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 news-image" style="margin-left: auto; margin-right: auto;">
+                            {% for image in news|slice:":1" %}
+                            <img src="{{ image.image.url }}" class="news-img mx-auto d-block" style="width: 80%;" alt="">
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Recent changes end -->
+        </section>
+    {% endblock %}
+
+
+    <!--  Page Js  -->
+    {% block page_scripts %}
+        <script>
+            // Получить высоту div с текстом и скриптом
+            var textHeight = document.querySelector('.news-text').offsetHeight;
+            var newsimg = document.querySelector('.news-img');
+            // Получить div с картинкой
+            var imageDiv = document.querySelector('.news-image');
+
+            // Установить высоту div с картинкой равной высоте div с текстом и скриптом
+            imageDiv.style.height = textHeight + 'px';
+            newsimg.style.height = textHeight + 'px';
+        </script>
+
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'js/custom.js' %}"></script>
+    {% endblock %}

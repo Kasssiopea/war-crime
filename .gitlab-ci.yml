@@ -1,0 +1,130 @@
+image: registry.git.in.np.gov.ua/other/docker-latest:main
+variables:
+  APPLICATION_IMAGE: ${CI_REGISTRY_IMAGE}:${CI_COMMIT_REF_NAME}-app
+  NGINX_IMAGE: ${CI_REGISTRY_IMAGE}:${CI_COMMIT_REF_NAME}-webserver
+
+  # інший image, щоб не пересікалися
+  APPLICATION_IMAGE_STAGING: ${APPLICATION_IMAGE}-staging
+  NGINX_IMAGE_STAGING: ${NGINX_IMAGE}-staging
+
+  # інший image, щоб не пересікалися
+  APPLICATION_IMAGE_PRODUCTION: ${APPLICATION_IMAGE}-production
+  NGINX_IMAGE_PRODUCTION: ${NGINX_IMAGE}-production
+
+stages:
+  - build
+  - deploy
+
+before_script:
+  - echo "$MYTOKEN" | docker login --username pat-token --password-stdin "$CI_REGISTRY"
+
+after_script:
+  - docker logout $CI_REGISTRY
+
+.create-env-file: &create-env-file
+  - echo "DATABASE_NAME=$DATABASE_NAME" >> .env-file
+  - echo "DATABASE_USER=$DATABASE_USER" >> .env-file
+  - echo "DATABASE_PASSWORD=$DATABASE_PASSWORD" >> .env-file
+  - echo "DATABASE_HOST=$DATABASE_HOST" >> .env-file
+  - echo "DATABASE_PORT=$DATABASE_PORT" >> .env-file
+  - echo "SECRET_KEY_SC=$SECRET_KEY_SC" >> .env-file
+  - echo "CSRF_TRUSTED_ORIGINS=$CSRF_TRUSTED_ORIGINS" >> .env-file
+  - echo "ALLOWED_HOSTS=$ALLOWED_HOSTS" >> .env-file
+  - echo "DEBUG=$DEBUG" >> .env-file
+
+build:
+  stage: build
+  tags:
+    - docker-hetzner
+  environment:
+    name: production
+  script:
+    - docker build --pull -t ${APPLICATION_IMAGE} --rm=true .
+    - docker push  ${APPLICATION_IMAGE}
+    - docker build --pull -t ${NGINX_IMAGE} --rm=true nginx/
+    - docker push  ${NGINX_IMAGE}
+  when: on_success
+  only:
+    - main
+
+release:
+  stage: deploy
+  tags:
+    - docker-hetzner
+  environment:
+    name: production
+  script:
+    - *create-env-file
+    - docker compose -f ./docker-compose-production.yml down --remove-orphans
+    - docker compose -f ./docker-compose-production.yml up -d
+    - docker ps
+  allow_failure: true
+  when: manual
+  only:
+    - main
+
+################ STAGING with VUE JS ################
+
+build-staging:
+  stage: build
+  tags:
+    - student-docker
+  environment:
+    name: vue-staging
+  script:
+    - docker build --pull -t ${APPLICATION_IMAGE_STAGING} --rm=true .
+    - docker push  ${APPLICATION_IMAGE_STAGING}
+    - docker build --pull -t ${NGINX_IMAGE_STAGING} --rm=true nginx/
+    - docker push  ${NGINX_IMAGE_STAGING}
+  when: manual
+  only:
+    - new_backend
+
+release-staging:
+  stage: deploy
+  tags:
+    - student-docker
+  environment:
+    name: vue-staging
+  script:
+    - *create-env-file
+    - docker compose -f ./docker-compose-staging.yml down --remove-orphans
+    - docker compose -f ./docker-compose-staging.yml up -d
+    - docker ps
+  allow_failure: true
+  when: manual
+  only:
+    - new_backend
+
+################ PRODUCTION with VUE JS ################
+
+build-production:
+  stage: build
+  tags:
+    - docker-hetzner
+  environment:
+    name: production
+  script:
+    - docker build --pull -t ${APPLICATION_IMAGE_PRODUCTION} --rm=true .
+    - docker push  ${APPLICATION_IMAGE_PRODUCTION}
+    - docker build --pull -t ${NGINX_IMAGE_PRODUCTION} --rm=true nginx/
+    - docker push  ${NGINX_IMAGE_PRODUCTION}
+  when: manual
+  only:
+    - new_backend
+
+release-production:
+  stage: deploy
+  tags:
+    - docker-hetzner
+  environment:
+    name: production
+  script:
+    - *create-env-file
+    - docker compose -f ./docker-compose-production-vue.yml down --remove-orphans
+    - docker compose -f ./docker-compose-production-vue.yml up -d
+    - docker ps
+  allow_failure: true
+  when: manual
+  only:
+    - new_backend

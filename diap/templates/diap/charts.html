@@ -1,0 +1,274 @@
+{% extends 'diap/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block page_css %}
+    {#  Chart Js CDN  #}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+{% endblock %}
+
+{% block main_content %}
+    <div class="container-fluid">
+        <div class="text-center mb-4 pb-2 mt-4">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-4 col-md-3 col-sm-2"></div>
+                    <div class="col shadow">
+                        <h1 class="text-dark">
+                            {% trans 'Статистика' %}
+                        </h1>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-3 col-sm-2"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-3 col-lg-4 col-md-3 col-sm-2"></div>
+                <div class="col">
+                    <div class=" text-center" role="alert">
+                      <p style="font-weight: bold">
+                          {% trans 'Тут Ви можете знайти статистичні дані про втрати російськох армії та інших військових формувань, задіяних у збройній агресії російської федерації проти України, з 2014 року по теперешній час. '%}
+                      </p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-3 col-sm-2"></div>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-md-12 col-lg-6">
+                <div class="chart-container" style="border: thick double #32a1ce;">
+                    <canvas id="RankChartArmy"></canvas>
+                </div>
+            </div>
+             <div class="col-md-12 col-lg-6">
+                <div class="chart-container" style="border: thick double #32a1ce;">
+                    <canvas id="RankChartFleet"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-md-12 col-lg-3"></div>
+            <div class="col-md-12 col-lg-6">
+                <div class="chart-container" style="border: thick double #32a1ce;">
+                    <canvas id="TypeOfArmyChart"></canvas>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-3"></div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-md-12 col-lg-6">
+                 <div class="chart-container" style="border: thick double #32a1ce;">
+                    <canvas id="BirthChart"></canvas>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6">
+                 <div class="chart-container" style="border: thick double #32a1ce;">
+                    <canvas id="DeathChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block page_scripts %}
+    {#  Rank Chart #}
+    <script>
+        $(document).ready(function () {
+            function charTypePieBar(response, type_of_rank = false){
+                var k= []
+                var v = []
+                for (const i in response) {
+                    k.push(i);
+                    v.push(response[i]);
+                }
+                return [k, v]
+            }
+            function create_chart_pie(response, div_id, text = 'Statistic'){
+                var xValues = response[0];
+                var yValues = response[1];
+                var barColors = [
+                    '#FF0000',  // Красный
+                    '#00FF00',  // Зеленый
+                    '#0000FF',  // Синий
+                    '#FFFF00',  // Желтый
+                    '#FF00FF',  // Розовый
+                    '#00FFFF',  // Голубой
+                    '#FFA500',  // Оранжевый
+                    '#800080',  // Фиолетовый
+                    '#FFC0CB',  // Розовато-лавандовый
+                    '#008000',  // Темно-зеленый
+                    '#000080',  // Темно-синий
+                    '#800000',  // Темно-красный
+                    '#008080',  // Темно-голубой
+                    '#808000',  // Оливковый
+                    '#800000',  // Темно-красный
+                    '#FF4500',  // Оранжево-красный
+                    '#00FF7F',  // Светло-зеленый
+                    '#9400D3',  // Темно-фиолетовый
+                    '#FF1493',  // Темно-розовый
+                    '#00BFFF',  // Светло-синий
+                    '#DC143C',  // Карминно-красный
+                    '#7CFC00',  // Зеленовато-желтый
+                    '#ADD8E6',  // Светло-голубой
+                    '#FF69B4',  // Розовый
+                    '#00FA9A',  // Морская волна
+                    '#8A2BE2',  // Фиолетовый
+                    '#FFD700',  // Золотой
+                    '#00CED1',  // Темно-бирюзовый
+                    '#FF6347'   // Темно-оранжевый
+                ];
+                new Chart(div_id, {
+                  type: "pie",
+                  data: {
+                    labels: xValues,
+                    datasets: [{
+                      backgroundColor: barColors,
+                      data: yValues
+                    }]
+                  },
+                  options: {
+                     labels: {
+                        fontSize: 12,
+                        boxWidth: 10
+                    },
+                    legend: {
+                        display: true,
+                        position: "bottom"
+                    },
+                    title: {
+                      display: true,
+                      text: text
+                    }
+                  }
+                });
+            }
+            function create_chart_bar_birth(response, div_id, text){
+                var barColors = [
+                    '#FF0000',  // Красный
+                    '#00FF00',  // Зеленый
+                    '#0000FF',  // Синий
+                    '#FFFF00',  // Желтый
+                    '#FF00FF',  // Розовый
+                    '#00FFFF',  // Голубой
+                    '#FFA500',  // Оранжевый
+                    '#800080',  // Фиолетовый
+                    '#FFC0CB',  // Розовато-лавандовый
+                    '#008000',  // Темно-зеленый
+                    '#000080',  // Темно-синий
+                    '#800000',  // Темно-красный
+                    '#008080',  // Темно-голубой
+                    '#808000',  // Оливковый
+                    '#800000',  // Темно-красный
+                    '#FF4500',  // Оранжево-красный
+                    '#00FF7F',  // Светло-зеленый
+                    '#9400D3',  // Темно-фиолетовый
+                    '#FF1493',  // Темно-розовый
+                    '#00BFFF',  // Светло-синий
+                    '#DC143C',  // Карминно-красный
+                    '#7CFC00',  // Зеленовато-желтый
+                    '#ADD8E6',  // Светло-голубой
+                    '#FF69B4',  // Розовый
+                    '#00FA9A',  // Морская волна
+                    '#8A2BE2',  // Фиолетовый
+                    '#FFD700',  // Золотой
+                    '#00CED1',  // Темно-бирюзовый
+                    '#FF6347'   // Темно-оранжевый
+                ];
+                var xValues = response[0].reverse();
+                var yValues = response[1].reverse();
+                new Chart(div_id, {
+                  type: "bar",
+                  data: {
+                    labels: xValues,
+                    datasets: [{
+                      backgroundColor: barColors,
+                      data: yValues
+                    }]
+                  },
+                  options: {
+                    legend: {display: false},
+                    title: {
+                      display: true,
+                      text: text
+                    }
+                  }
+                });
+            }
+            function create_chart_bar_dead(response, div_id, text){
+                var barColors = [
+                    '#FF0000',  // Красный
+                    '#00FF00',  // Зеленый
+                    '#0000FF',  // Синий
+                    '#FFFF00',  // Желтый
+                    '#FF00FF',  // Розовый
+                    '#00FFFF',  // Голубой
+                    '#FFA500',  // Оранжевый
+                    '#800080',  // Фиолетовый
+                    '#FFC0CB',  // Розовато-лавандовый
+                    '#008000',  // Темно-зеленый
+                    '#000080',  // Темно-синий
+                    '#800000',  // Темно-красный
+                    '#008080',  // Темно-голубой
+                    '#808000',  // Оливковый
+                    '#800000',  // Темно-красный
+                    '#FF4500',  // Оранжево-красный
+                    '#00FF7F',  // Светло-зеленый
+                    '#9400D3',  // Темно-фиолетовый
+                    '#FF1493',  // Темно-розовый
+                    '#00BFFF',  // Светло-синий
+                    '#DC143C',  // Карминно-красный
+                    '#7CFC00',  // Зеленовато-желтый
+                    '#ADD8E6',  // Светло-голубой
+                    '#FF69B4',  // Розовый
+                    '#00FA9A',  // Морская волна
+                    '#8A2BE2',  // Фиолетовый
+                    '#FFD700',  // Золотой
+                    '#00CED1',  // Темно-бирюзовый
+                    '#FF6347'   // Темно-оранжевый
+                ];
+                var xValues = response[0].reverse();
+                var yValues = response[1].reverse();
+                new Chart(div_id, {
+                  type: "bar",
+                  data: {
+                    labels: xValues,
+                    datasets: [{
+                      backgroundColor: barColors,
+                      data: yValues
+                    }]
+                  },
+                  options: {
+                    legend: {display: false},
+                    title: {
+                      display: true,
+                      text: text
+                    }
+                  }
+                });
+            }
+            $.ajax({
+                  url: '{% url 'ajax_charts' %}',
+                  type: "POST",
+                  dataType: "json",
+                  data: {
+                    csrfmiddlewaretoken: '{{ csrf_token }}'
+                  },
+                  success: function(response) {
+                    // Обработка успешного ответа от сервера
+                      console.log(response);
+                    create_chart_pie(charTypePieBar(response.ranks[0]), 'RankChartArmy', '{% trans 'Військові звання' %}');
+                    create_chart_pie(charTypePieBar(response.ranks[1]), 'RankChartFleet', '{% trans 'Військово-морські звання' %}');
+                    create_chart_pie(charTypePieBar(response.type_of_army), 'TypeOfArmyChart', '{% trans 'Військові формування' %}');
+                    create_chart_bar_birth(charTypePieBar(response.birth), 'BirthChart', '{% trans 'Вік' %}')
+                    create_chart_bar_dead(charTypePieBar(response.death), 'DeathChart', '{% trans 'Роки смерті' %}')
+                  },
+                  error: function(xhr, textStatus, errorThrown) {
+                    // Обработка ошибки
+                    console.log(errorThrown);
+                  }
+                });
+        });
+    </script>
+{% endblock %}

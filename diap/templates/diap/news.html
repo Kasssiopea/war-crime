@@ -1,0 +1,106 @@
+{% extends 'diap/base.html' %}
+{% load static %}
+{% load i18n %}
+
+    <!--  Page CSS  -->
+    {% block page_css %}
+        <link rel="stylesheet" href="{% static 'css/site/index.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/templatemo-pod-talk.css' %}">
+        <style>
+            P.item { margin-top: 10px; margin-bottom: 8px; font-family: arial, helvetica, verdana, sans-serif; padding-bottom: 10px; border-bottom: 1px solid #999; line-height: 1.45em; width: 100%; }
+            a { color: #00499B; }
+            #items { font-size: 13px; }
+            SPAN.description { color: #222; line-height: 1.25em; font-size: 17px; }
+            SPAN.date { color: #888; font-size: 11px; }
+            SPAN.date A { color: #247; }
+            SPAN.grey { color: #888; font-weight: bold; font-size: 22px; }
+
+            .parent-div { display: flex; align-items: stretch; box-sizing: border-box; margin: 0; padding: 0; border: none; width: 100%; }
+            .parent-div img { height: 100%; }
+        </style>
+    {% endblock %}
+
+    {% block main_content %}
+    <div class="text-center mb-4 pb-2 mt-4">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-3 col-lg-4 col-md-3 col-sm-2"></div>
+                <div class="col shadow" id="main_label_carousel">
+                    <h1 class="text-dark">
+                        {% trans "Новини" %}
+                    </h1>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-3 col-sm-2"></div>
+            </div>
+        </div>
+    </div>
+        <div class="container-fluid">
+            <div class="row flex-column-reverse flex-lg-row">
+                <div class="col-sm-6 col-lg-6 col-md-12">
+                    <div class="row mb-4">
+                        <div class="col-xl-3 col-lg-4 col-md-3 col-sm-2"></div>
+                        <div class="col shadow" id="main_label_carousel">
+                            <h1 class="text-dark text-center">
+                                {% trans "Загальні новини" %}
+                            </h1>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-3 col-sm-2"></div>
+                    </div>
+                    <script type="text/javascript" src="https://feed.informer.com/widgets/LPNILA9EN4.js"></script>
+                    <noscript><a href="https://feed.informer.com/widgets/LPNILA9EN4.html">"News new"</a>
+                    Powered by <a href="http://feed.informer.com/">RSS Feed Informer</a></noscript>
+                </div>
+                <div class="col-sm-6 col-lg-6 col-md-12 ">
+                    <div class="row mb-4">
+                        <div class="col-xl-3 col-lg-4 col-md-3 col-sm-2"></div>
+                        <div class="col shadow" id="main_label_carousel">
+                            <h1 class="text-dark text-center">
+                                {% trans "Важливі події" %}
+                            </h1>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-3 col-sm-2"></div>
+                    </div>
+                    <div class="parent-div">
+                        <div style="float: left;">
+                            <video controls border="1" width="250" height="150" style="margin-bottom: 6px; margin-right: 10px;">
+                                <source src="{% static 'image/vata.MP4' %}" type="video/mp4">
+                            </video>
+                        </div>
+                        <p class="item"><big><span class="grey">&raquo;</span> <a href="https://t.me/vatnoeboloto/8616" target="_blank">Это кладбище под Новосибирском. Бесконечные ряды могил тех, кто убит на войне</a></big><br/><span class="date">25/04/2023  12:57 from <a href="https://t.me/vatnoeboloto">Ватное болото</a></span><br /><ifdescription><span class="description">Смотрите все полторы минуты, чтобы понять масштаб кладбища. Одного-единственного. А таких по России сотни. И на каждом - сотни могил. Десятки, сотни тысяч могил в стране, орущей, что "потерь нет".</span><br /></ifdescription></p>
+                    </div>
+                    <div class="parent-div">
+                        <div style="float: left;">
+                            <video controls border="1" width="250" height="150" style="margin-bottom: 6px; margin-right: 10px;">
+                                <source src="{% static 'image/NOLOSSES.MP4' %}" type="video/mp4">
+                            </video>
+                        </div>
+                        <p class="item"><big><span class="grey">&raquo;</span> <a href="https://www.youtube.com/watch?v=jVqMp8EnHBI" target="_blank">КОРОТКОМЕТРАЖНИЙ ФІЛЬМ “ПОТЕРЬ НЕТ” | SHORT FILM - “NO LOSSES” | 2023</a></big><br/><span class="date">13/02/2023 from <a href="https://www.youtube.com/@andriivakulik">Andrii Vakulik</a></span><br /><ifdescription><span class="description">“Потєрь нєт” - дебютний короткометражний фільм українського режисера та сценариста Андрія Вакуліка.</span><br /></ifdescription></p>
+                    </div>
+                    {% for item in important_news %}
+                        <div class="parent-div mb-2">
+                            <div style="float: left;">
+                                <a href="{{ item.url_news}}" target="_blank">
+                                    <img src="{{ item.image.url}}" border="1" width="250" height="150" style="margin-bottom: 6px; margin-right: 10px;" />
+                                </a>
+                            </div>
+                            <p class="item">
+                                <big>
+                                    <span class="grey">&raquo;</span>
+                                    <a href="{{ item.url_news}}" target="_blank">{{ item.title}}</a>
+                                </big>
+                                <br/>
+                                <span class="date">{{ item.span_date}} from <a href="{{ item.url_news }}">{{ item.news_name }}</a></span>
+                                <br />
+                                <ifdescription>
+                                    <span class="description">{{ item.text }}</span>
+                                    <br />
+                                </ifdescription>
+                            </p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    {% endblock %}

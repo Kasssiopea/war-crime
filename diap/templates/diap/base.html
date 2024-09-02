@@ -1,0 +1,253 @@
+{% load static %}
+{% load i18n %}
+{% load image_tag %}
+<!DOCTYPE html>
+<html lang="uk" style="height: 100%;">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-366L35J664"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-366L35J664');
+    </script>
+    <meta charset="UTF-8">
+    {#  Title  #}
+    <title>{{ title }}</title>
+    <!--  Favicon   -->
+    <link rel="icon" href="{% static 'image/ico/Icon-removebg-preview.ico' %}">
+
+    <!--  BootStrap CSS  -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-icons.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+    <style>
+        .arrow::after {
+            display: none !important;
+
+        }
+        .arrow1:hover{
+            background-color: white !important;
+        }
+
+        .dropdown-menu .dropdown-item:hover {
+          color: white;
+        }
+        .dropdown-menu a:hover,
+            .dropdown-menu button:hover,
+            .dropdown-menu label:hover,
+            .dropdown-menu input[type="checkbox"]:hover + label,
+            .dropdown-menu input[type="radio"]:hover + label,
+            .dropdown-menu input[type="checkbox"]:focus + label,
+            .dropdown-menu input[type="radio"]:focus + label {
+              background-color: #0dcaf0 !important;
+            }
+            .dropdown-menu a,
+            .dropdown-menu button,
+            .dropdown-menu label,
+            .dropdown-menu input[type="checkbox"] + label,
+            .dropdown-menu input[type="radio"] + label {
+              background-color: transparent !important;
+            }
+    </style>
+
+    {#  Core CSS  #}
+    <link rel="stylesheet" href="{% static 'css/site/navar.css' %}">
+
+    <!--  Fonts CSS  -->
+    <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Sono:wght@200;300;400;500;700&display=swap"
+    rel="stylesheet">
+
+    <!--  Page CSS  -->
+    {% block page_css %}
+    {% endblock page_css %}
+
+</head>
+
+<body style="height: 100%; display: flex; flex-direction: column;">
+    {#  Navbar  #}
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top shadow" id="main_navbar">
+          <div class="container-fluid" style="margin-top: 15px;">
+            <a class="navbar-brand" href="{% url 'home' %}" id="brand_label">
+                <img src="{% static 'image/logo/Icon-removebg-preview.png' %}" alt="Logo">
+                <span>Потерь.НЕТ</span>
+            </a>
+            <div><!-- 3 start add div -->
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" style="height: 40px; width: 40px; "></span> <!-- 3 start style="height: 40px; width: 40px; " -->
+              </button>
+              <!-- 3 start -->
+              <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler2" aria-controls="navbarToggler2" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="nav-link dropdown-toggle arrow" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                    <img src="{% static 'image\site\index\choise_lang.png' %}" alt="Logo" height="40px" width="40px"> <!-- 3 start w_h -->
+                </a>
+              </button>
+            </div>
+            <!-- 3 end -->
+            <div class="header_test-fill-mode" style="position: absolute; background-color: lightgray; padding: 0 5px; top: 5px; left: 50%; width: 320px; margin-left: -160px; text-align: center; z-index: 2; ">
+                <span style="display: block; font-weight: 500; color: black; font-size: 15px; line-height: normal; padding: 2px 0;">{% trans "Сайт в режимі тестування та наповнення" %}</span>
+            </div>
+            <!-- 3 start -->
+            <div class="collapse navbar-collapse d-lg-none" id="navbarToggler2">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center d-lg-none" id="navbar_text">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="{% check_lang_url request.get_full_path 'uk/' %}">{% trans "Українськa" %}</a> <!-- dropdown-item -->
+                  </li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="{% check_lang_url request.get_full_path 'en/' %}">{% trans "English" %}</a>
+                  </li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="{% check_lang_url request.get_full_path 'ru/' %}">{% trans "Русский" %}</a>
+                  </li>
+                </ul>
+            </div>
+            <!-- 3 end -->
+            <div class="collapse navbar-collapse" id="navbarToggler">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center" id="navbar_text">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{% url 'home' %}">{% trans "Головна" %}</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="{% url 'persons' %}">{% trans "Пошук людей" %}</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="{% url 'news' %}">{% trans "Новини" %}</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="{% url 'charts' %}">{% trans "Статистика" %}</a>
+                </li>
+                {% if request.user.is_authenticated %}
+                <li>
+                  <a class="nav-link active" href="{% url 'message' %}">{% trans "Повідомити про загиблого" %}</a>
+                </li>
+                {% else %}
+                <li>
+                  <a class="nav-link active" href="{% url 'login' %}">{% trans "Повідомити про загиблого" %}</a>
+                </li>
+
+                {% endif %}
+                {# Registation & Auth #}
+                  {% if request.user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link active" id="log" href="{% url 'logout' %}">{% trans "Вихід" %}</a>
+                    </li>
+                      <li class="dropdown">
+                      <a class="nav-link dropdown-toggle arrow d-none d-lg-block" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                          <img src="{% static 'image\site\index\choise_lang.png' %}" alt="Logo" height="25px" width="25px"> <!-- 3 start w_h and d-none d-lg-block -->
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end arrow1" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="{% check_lang_url request.get_full_path 'uk/' %}">{% trans "Українськa" %}</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% check_lang_url request.get_full_path 'en/' %}">{% trans "English" %}</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% check_lang_url request.get_full_path 'ru/' %}">{% trans "Русский" %}</a></li>
+                      </ul>
+                    </li>
+                  {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link active" id="reg" href="{% url 'reg' %}">{% trans "Зареєструватися" %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" id="log" href="{% url 'login' %}">{% trans "Вхід" %}</a>
+                    </li>
+                    <li class="dropdown">
+                      <a class="nav-link dropdown-toggle arrow d-none d-lg-block" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                          <img src="{% static 'image\site\index\choise_lang.png' %}" alt="Logo" height="25px" width="25px"> <!-- 3 start w_h and d-none d-lg-block -->
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end arrow1" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="{% check_lang_url request.get_full_path 'uk/' %}">{% trans "Українськa" %}</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% check_lang_url request.get_full_path 'en/' %}">{% trans "English" %}</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% check_lang_url request.get_full_path 'ru/' %}">{% trans "Русский" %}</a></li>
+                      </ul>
+                    </li>
+                  {% endif %}
+              </ul>
+            </div>
+          </div>
+        </nav>
+    {#  Main content  #}
+    {% block main_content %}
+    {% endblock %}
+
+    {#  Footer  #}
+    <section>
+        <footer class="text-white text-center text-lg-start" style="background-color: #383285; flex-shrink: 0; width: 100%;">
+        <!-- Grid container -->
+        <div class="container-fluid p-4">
+          <!--Grid row-->
+          <div class="row justify-content-center mb-3">
+            {% trans "Сайт в режимі тестування та наповнення" %}
+          </div>
+          <div class="row justify-content-center">
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h2>
+                    <img src="{% static 'image/logo/Icon-removebg-preview.png' %}" class="d-inline-block">
+                    <span style="color: white; font-family: 'Roboto Slab', serif;">Потерь.НЕТ</span>
+                </h2>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0 text-center">
+              <h5 class="text-uppercase text-white">{% trans "Інформація про нас" %}</h5>
+               <p>
+                    {% trans "Ми збираємо факти про втрати російської армії та інших військових формувань, задіяних у збройній агресії російської федерації проти України. <br> Наша мета - зібрати максимальну їх кількість." %}
+               </p>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-white text-center">{% trans "Контакти" %}</h5>
+                <div class="container">
+                        <a href="https://t.me/poter_nety_bot" target="_blank" style="color: #ffffff; text-decoration: none; ">
+                            <i class="fa-brands fa-telegram fa-xl" style="color: #ffffff;"></i> {% trans "Telegram Bot" %} (@poter_nety_bot)
+                        </a>
+                    <hr>
+                        <a href="https://t.me/PoterNetChannel" target="_blank" style="color: #ffffff; text-decoration: none;">
+                            <i class="fa-brands fa-telegram fa-xl" style="color: #ffffff;"></i> {% trans "Telegram Channel" %}
+                        </a>
+                    <hr>
+                        <a href="https://twitter.com/PoterNet_site" target="_blank" style="color: #ffffff; text-decoration: none;">
+                            <i class="fa-brands fa-twitter fa-xl" style="color: #ffffff;"></i> {% trans "Twitter" %}
+                        </a>
+                    <hr>
+
+                    <p class="text-white font-weight-bold">
+                        <i class="fa-regular fa-envelope fa-xl" style="color: #ffffff;"></i> Nodeadnoloss@gmail.com
+                    </p>
+                </div>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+        </div>
+        <!-- Grid container -->
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          Потерь.НЕТ © 2023
+        </div>
+        <!-- Copyright -->
+      </footer>
+    </section>
+    <!--  BootStrap Js  -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+    <!--  Page Js  -->
+    {% block page_scripts %}
+    {% endblock %}
+
+</body>
+</html>

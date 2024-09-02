@@ -1,0 +1,21 @@
+# IDE folder
+.idea
+venvr
+
+# Media folder (photos)
+# war-crime\media\photos\2022\12\27
+media/**
+!media/.gitkeep
+
+# Environment file for Development
+develop-env
+env-develop
+# Environment file for production (creates in CI)
+.env-file
+develop/env-staging
+# ingnore SQL dump file
+*.sql.gz
+*.sql
+
+# Файли, що генеряться командою 'python manage.py compilemessages'
+locale/**/*.mo

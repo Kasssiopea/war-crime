@@ -1,0 +1,42 @@
+version: "3.9"
+
+networks:
+  wc:
+    name: br0
+    external: true
+services:
+  web:
+    image: ${APPLICATION_IMAGE_STAGING}
+    hostname: web
+    networks:
+      - wc
+    command: sh /code/production-docker-entrypoint.sh
+    env_file:
+      - .env-file    
+    volumes:
+      - "/srv/war_crime/media:/code/media:rw"
+      - "/srv/war_crime/static:/code/staticfiles:rw"
+    restart: always
+
+  nginx:
+    image: ${NGINX_IMAGE_STAGING}
+    hostname: nginx
+    networks:
+      - wc
+    depends_on:
+      - web  
+    ports:
+      - 8001:80
+    restart: always
+    volumes:
+      - "/srv/war_crime/media:/var/www/html/media:ro"
+      - "/srv/war_crime/static:/var/www/html/static:ro"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.route-${CI_PROJECT_NAME}-2.rule=Host(${PUBLIC_URL}) && PathPrefix(`/api/v1`,`/admin`,`/static/admin`,`/media`, `/ru/admin/check/`, `/uk/admin/check/`, `/en/admin/check/`, `/ru/admin/statistic/`, `/uk/admin/statistic/`, `/en/admin/statistic/`)"
+      - "traefik.http.routers.route-${CI_PROJECT_NAME}-2.priority=50"
+      - "traefik.http.routers.route-${CI_PROJECT_NAME}-2.middlewares=middl-api-${CI_PROJECT_NAME}"
+      - "traefik.http.middlewares.middl-api-${CI_PROJECT_NAME}.chain.middlewares=ratelimit-${CI_PROJECT_NAME}-2"
+      - "traefik.http.middlewares.ratelimit-${CI_PROJECT_NAME}-2.ratelimit.average=100"
+      - "traefik.http.middlewares.ratelimit-${CI_PROJECT_NAME}-2.ratelimit.burst=100"
+      - "traefik.http.middlewares.ratelimit-${CI_PROJECT_NAME}-2.ratelimit.period=1"

@@ -1,0 +1,34 @@
+{% extends 'diap/base_log_reg.html' %}
+{% load static %}
+{% load i18n %}
+<!-- -->
+{% block page_css %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        nav {
+            line-height:normal;
+            height: auto;
+        }
+    </style>
+{% endblock %}
+<!-- -->
+{% block main_content %}
+    <section>
+          <div class="popups_log">
+          <div class="popup logup_popup">
+              <h3>{% trans "Вхід" %}</h3>
+              <form class="my-form" action="{% url 'login' %}" method="post" class="text-centers">
+                  {% csrf_token %}
+                  {{ form.as_p }}
+                  <input type="submit" class="btn blue darken-1" value="{% trans 'Ввійти' %}" style="min-width: 100%; height: 41.1px; padding: 0;">
+                  <a class="btn blue darken-1" href="{% url 'reg' %}" style="width: 100%; border: 1px solid #afafaf; border-radius:10px; font-size: small; height: 41.1px; padding: 0;">{% trans "Зареєструватися" %}</a>
+              </form>
+          </div>
+      </div>
+    </section>
+{% endblock %}
+<!-- -->
+{% block page_scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+{% endblock %}
+<!-- -->

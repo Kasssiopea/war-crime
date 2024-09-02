@@ -1,0 +1,27 @@
+#main_navbar {
+    background-color: white;
+}
+
+#brand_label {
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
+    font-family: 'Roboto Slab', serif;
+    color: black;
+    font-size: 2rem;
+}
+
+#navbar_text {
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
+    font-family: 'Roboto Slab', serif;
+    color: black;
+    font-size: 1.2rem;
+}
+#navbar_text :hover{
+    background-color: #0dcaf0;
+    border-radius: 10px;
+      -webkit-transition: all 0.1s ease;
+      -moz-transition: all 0.1s ease;
+      -o-transition: all 0.1s ease;
+      transition: all 0.1s ease;
+    font-size: 1.4rem;
+}
+

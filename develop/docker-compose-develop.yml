@@ -1,0 +1,28 @@
+version: "3.11"
+
+services:
+  web:
+    build: ../
+    command: sh ./develop/develop-docker-entrypoint.sh
+    env_file:
+      - env-develop
+    volumes:
+      - ..:/code
+    ports:
+      - 8000:8000
+    depends_on:
+      - poternet_db
+
+  poternet_db:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=war_crime_user
+      - POSTGRES_PASSWORD=3232322ddd
+      - POSTGRES_DB=war_crime
+    volumes:
+      - postgres_data_develop:/var/lib/postgresql/data/
+    ports:
+      - 5432:5432
+
+volumes:
+  postgres_data_develop:

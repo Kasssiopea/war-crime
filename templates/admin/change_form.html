@@ -1,0 +1,60 @@
+{% extends "admin/change_form.html" %}
+{% load i18n %}
+{% block object-tools %}
+  {{ block.super }}
+  <script>
+  function checkDuplicates() {
+    const titleInput = document.getElementById('id_title');
+    const textInput = document.getElementById('id_text');
+    const authorInput = document.getElementById('id_author');
+    const categoryInput = document.getElementById('id_category');
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', '{% url "check" %}', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.setRequestHeader('X-CSRFToken', getCookie('csrftoken')); // передаем CSRF-токен
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            const response = JSON.parse(xhr.responseText);
+            if (response.duplicates.length > 0) {
+                const resultDiv = document.getElementById('result');
+                resultDiv.innerHTML = 'Duplicates found: ' + response.duplicates.join(', ');
+            } else {
+                const resultDiv = document.getElementById('result');
+                resultDiv.innerHTML = 'No duplicates found.';
+            }
+            const url = {% url 'check' %}; // замените на нужный url
+            window.open(url, '_blank');
+        }
+    };
+    xhr.send(JSON.stringify({
+        'title': titleInput.value,
+        'text': textInput.value,
+        'author': authorInput.value,
+        'category': categoryInput.value,
+    }));
+}
+
+</script>
+  <div>
+    <h2>Check for duplicates:</h2>
+    <form method="post" action="{% url "check" %}" target="_blank" onclick="window.open('', '_self', '');">
+        {% csrf_token %}
+        <label for="id_text1">Прізвище:</label>
+        <input type="text" name="surname" id="id_text1" required>
+        <label for="id_text1">Ім'я:</label>
+        <input type="text" name="name" id="id_name">
+        <label for="id_text1">По-батькові:</label>
+        <input type="text" name="last_name" id="id_last_name">
+<!--        <input type="text" name="date" id="id_date">-->
+        <button type="submit">Check</button>
+    </form>
+  </div>
+{% if duplicates %}
+  <p>Duplicates found: {{ duplicates|join:', ' }}</p>
+{% else %}
+  <p>{{ message }}</p>
+{% endif %}
+{% endblock %}
+
+

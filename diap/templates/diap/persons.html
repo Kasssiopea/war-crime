@@ -1,0 +1,181 @@
+{% extends   'diap/base.html' %}
+{% load static %}
+{% load image_tag %}
+{% load i18n %}
+    <!--  Page CSS  -->
+    {% block page_css %}
+        <link rel="stylesheet" href="{% static 'css/site/persons.css' %}">
+    {% endblock %}
+
+    {#  Main content   #}
+    {% block main_content %}
+        <section>
+            <div class="container-fluid">
+                <div class="row">
+                    <h2 class="text-center mt-2">
+                        {% trans "Пошук людей" %}
+                    </h2>
+                    <div class="card-title pl-0 pr-0 shadow-none" id="searcher">
+                        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseSearch" role="button" aria-expanded="true" aria-controls="collapseSearch">
+                            {% trans "Фільтр" %}
+                            <i class="fa-solid fa-magnifying-glass fa-lg" style="color: white"></i>
+                        </a>
+                    </div>
+                    <div class="card-content shadow-none p-3 mb-5 bg-light rounded collapse show" id="collapseSearch">
+                        <form action="{% url 'persons' %}" method="get">
+                            <div class="row mb-3">
+                                <div class="col"></div>
+                                <div class="col-md-4 text-center mb-2">
+                                  <label for="search_pib"> {% trans "Пошук" %} </label>
+                                  <input type="text" class="form-control text-center" id="search_pib" name="search_pib" placeholder="{% trans 'Введіть П.І.Б. для пошуку' %}">
+                                </div>
+                                <div class="col"></div>
+                                <div class="col-12 text-center mb-2">
+                                    <button class="btn btn-primary" type="submit">{% trans "Пошук" %}</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <h2 class="text-center">
+                        {% trans "Нові публікації" %}
+                    </h2>
+                    <hr class="my-5">
+                    <!-- {% if page_obj.has_other_pages %}
+                        <nav aria-label="Page navigation">
+                          <ul class="pagination justify-content-center">
+
+                          {% if page_obj.has_previous %}
+                            <li class="page-item prev">
+                                <a class="page-link"  href="?page={{ page_obj.previous_page_number }}">
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </li>
+                          {% else %}
+                             <li class="page-item prev disabled">
+                                <a class="page-link">
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                             </li>
+                          {% endif %}
+                        {% for p in paginator.page_range %}
+                            {% if page_obj.number == p %}
+                                <li class="page-item active"><a class="page-link" href="javascript:void(0);" style="z-index: auto">{{ p }}</a></li>
+                                {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2  %}
+                                <li class="page-item" >
+                                    <a class="page-link" href="?page={{ p }}">{{ p }}</a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                            {% if page_obj.has_next %}
+                                <li class="page-item next">
+                                  <a class="page-link" href="?page={{ page_obj.next_page_number }}">
+                                      <i class="fa-solid fa-arrow-right"></i>
+                                  </a>
+                                </li>
+                            {% else %}
+                              <li class="page-item next disabled">
+                                  <a class="page-link">
+                                      <i class="fa-solid fa-arrow-right"></i>
+                                  </a>
+                              </li>
+                            {% endif %}
+                          </ul>
+                        </nav>
+                    {% endif %} -->
+                        {% for person in persons %}
+                            <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-6 mb-5 pb-4 pt-2">
+                                  <div class="card h-100" style="position: relative">
+                                      <div class="row">
+                                          <div class="col-12">
+                                              <div class="container"  style="height: 300px;">
+                                                <a href="{{ person.get_absolute_url }}">
+                                                <img class="card-img-top d-block" src="{% check_image person %}" alt="Card image cap" href="#" style="
+                                                        width: 100%;
+                                                        height: 100%;
+                                                        object-fit: cover;">
+                                                </a>
+                                              </div>
+
+                                           </div>
+                                          <div class="col-12">
+                                              <div class="card-body p-0">
+                                                <a href="{{ person.get_absolute_url }}">
+                                                    <h6 class="card-title text-center">
+                                                      {{ person.last_name| default_if_none:"" }} {{ person.first_name| default_if_none:"" }} {{ person.middle_name | default_if_none:"" }}
+                                                    </h6>
+                                                </a>
+                                                <ul class="list-group list-group-flush text-center">
+                                                    <li class="list-group-item">
+                                                        <strong>{% trans "Дата народження" %}:</strong>
+                                                        <br>
+                                                        {% if person.birthday %}
+                                                            {{ person.birthday | date:"d.m.Y" }}
+                                                        {% else %}
+                                                            {% if person.birthday_day or person.birthday_month or person.birthday_year %}
+                                                                {{person.birthday_day | default_if_none:"?"}}.{{person.birthday_month | default_if_none:"?"}}.{{person.birthday_year | default_if_none:"?"}}
+                                                            {% else %}
+                                                                {% trans "Уточнюється" %}
+                                                            {% endif %}
+                                                        {% endif %}
+                                                    </li>
+                                                    <li class="list-group-item"> <strong>{% trans "Військова частина" %}:</strong>
+                                                        <br>
+                                                            {{ person.military_unit | default_if_none:_("Уточнюється") }}
+                                                    </li>
+                                                </ul>
+                                             </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                            </div>
+                        {% empty %}
+                            <h1 class="text-center">
+                                {% trans "Людей за вашим запитом не знайдено !" %}
+                            </h1>
+                        {% endfor %}
+                        <!-- {% if page_obj.has_other_pages %}
+                        <nav aria-label="Page navigation">
+                          <ul class="pagination justify-content-center">
+
+                          {% if page_obj.has_previous %}
+                            <li class="page-item prev">
+                                <a class="page-link"  href="?page={{ page_obj.previous_page_number }}">
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </li>
+                          {% else %}
+                             <li class="page-item prev disabled">
+                                <a class="page-link">
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                             </li>
+                          {% endif %}
+                        {% for p in paginator.page_range %}
+                            {% if page_obj.number == p %}
+                                <li class="page-item active"><a class="page-link" href="javascript:void(0);" style="z-index: auto">{{ p }}</a></li>
+                                {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2  %}
+                                <li class="page-item" >
+                                    <a class="page-link" href="?page={{ p }}">{{ p }}</a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                            {% if page_obj.has_next %}
+                                <li class="page-item next">
+                                  <a class="page-link" href="?page={{ page_obj.next_page_number }}">
+                                      <i class="fa-solid fa-arrow-right"></i>
+                                  </a>
+                                </li>
+                            {% else %}
+                              <li class="page-item next disabled">
+                                  <a class="page-link">
+                                      <i class="fa-solid fa-arrow-right"></i>
+                                  </a>
+                              </li>
+                            {% endif %}
+                          </ul>
+                        </nav>
+                    {% endif %} -->
+                </div>
+            </div>
+        </section>
+    {% endblock %}

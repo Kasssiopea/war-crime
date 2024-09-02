@@ -1,0 +1,19 @@
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 70%;
+  margin: 20px auto;
+}
+
+.white-popup img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* .resp {
+    font-size: 3vmin;
+  } */

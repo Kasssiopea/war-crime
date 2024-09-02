@@ -1,0 +1,394 @@
+{% extends 'diap/base.html' %}
+{% load static %}
+{% load image_tag %}
+{% load i18n %}
+
+    {#  Page CSS  #}
+    {% block page_css %}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+        <link rel="stylesheet" href="{% static 'css/site/person.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/templatemo-pod-talk.css' %}">
+        <style>
+              nav {
+                line-height:normal;
+                height: auto;
+            }
+        </style>
+    {% endblock %}
+
+    {#  Main content  #}
+    {% block main_content %}
+        <section class="hero-section p-4" style="flex: 1 0 auto;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-12">
+                        <div class="text-center mb-2 pb-2">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-xl-3 col-lg-4 col-md-3 col-sm-2"></div>
+                                    <div class="col shadow" id="main_label_carousel">
+                                        <h2 class="text-dark">
+                                            {{ person.last_name| default_if_none:""}} {{ person.first_name| default_if_none:""}} {{ person.middle_name | default_if_none:""}}
+                                        </h2>
+                                    </div>
+                                    <div class="col-xl-3 col-lg-4 col-md-3 col-sm-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col" style="width: 110%;">
+                              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                      <li class="nav-item" role="presentation">
+                                            <button class="nav-link active resp" id="home-tab" data-bs-toggle="tab" data-bs-target="#person" type="button" role="tab" aria-controls="person" aria-selected="true" style="font-size: 3vmin;">{% trans "Загальна інформація" %}</button>
+                                      </li>
+                                      <li class="nav-item" role="presentation">
+                                            <button class="nav-link resp" id="millitary-tab" data-bs-toggle="tab" data-bs-target="#millitary" type="button" role="tab" aria-controls="millitary" aria-selected="false" style="font-size: 3vmin;">{% trans "Служба" %}</button>
+                                      </li>
+                                      <li class="nav-item" role="presentation">
+                                            <button class="nav-link resp" id="contact-tab" data-bs-toggle="tab" data-bs-target="#inf" type="button" role="tab" aria-controls="inf" aria-selected="false" style="font-size: 3vmin;">{% trans "Джерела" %}</button>
+                                      </li>
+                              </ul>
+                              <div class="tab-content" id="myTabContent">
+                                    {#  Загальна інформація  #}
+                                  <div class="tab-pane fade show active" id="person" role="tabpanel" aria-labelledby="person_label">
+                                      <div class="container-fluid">
+                                          <div class="row">
+                                              <div class="col-lg-4 col-sm-12 mb-2">
+                                                  <img src="{% check_detail_image images %}"
+                                                       class="rounded mx-auto d-block img-fluid" alt="..." >
+                                              </div>
+                                              <div class="col-lg-8 col-sm-12">
+                                                  <div class="card overflow-hidden mb-4">
+                                                <h5 class="card-header">{% trans "Інформація" %}</h5>
+                                                <div class="card-body ps" id="vertical-example-1">
+                                                    <div class="card-body p-0">
+                                                        <ul class="list-group list-group-flush">
+                                                            {% if person.birthday %}
+                                                                <li class="list-group-item">
+                                                                    {% trans "Дата народження" %}: {{person.birthday|date:"d.m.Y"}}
+                                                                </li>
+                                                            {% else %}
+                                                                {% if person.birthday_day or person.birthday_month or person.birthday_year %}
+                                                                    <li class="list-group-item">
+                                                                        {% trans "Дата народження" %}: {{person.birthday_day | default_if_none:"?"}}.{{person.birthday_month | default_if_none:"?"}}.{{person.birthday_year | default_if_none:"?"}}
+                                                                    </li>
+                                                                {% endif %}
+                                                            {% endif %}
+                                                            {% if person.citizenship %}
+                                                                <li class="list-group-item">
+                                                                   {% trans "Громадянство" %}: {{person.citizenship}}
+                                                                </li>
+                                                            {% endif %}
+                                                            {% if person.passport %}
+                                                                <li class="list-group-item">
+                                                                   {% trans "Паспорт" %}: {{person.passport}}
+                                                                </li>
+                                                            {% endif %}
+                                                            {% if person.individual_identification_number %}
+                                                                <li class="list-group-item">
+                                                                   {% trans "Індитифікаційний код" %}: {{person.individual_identification_number}}
+                                                                </li>
+                                                            {% endif %}
+                                                            {% if person.place_of_birthday %}
+                                                                <li class="list-group-item">
+                                                                   {% trans "Місце народження" %}: {{person.place_of_birthday}}
+                                                                </li>
+                                                            {% endif %}
+                                                            {% if person.place_of_living %}
+                                                                <li class="list-group-item">
+                                                                   {% trans "Місце проживання" %}: {{person.place_of_living}}
+                                                                </li>
+                                                            {% endif %}
+                                                            {% if person.place_where_accident %}
+                                                                <li class="list-group-item">
+                                                                  {% trans "Місце загибелі" %}: {{person.place_where_accident}}
+                                                                </li>
+                                                            {% endif %}
+                                                            {% if person.data_when_accident %}
+                                                                <li class="list-group-item">
+                                                                   {% trans "Дата загибелі" %}: {{person.data_when_accident|date:"d.m.Y"}}
+                                                                </li>
+                                                            {% else %}
+                                                                {% if person.data_when_accident_day or person.data_when_accident_month or person.data_when_accident_year %}
+                                                                    <li class="list-group-item">
+                                                                         {% trans "Дата загибелі" %}: {{person.data_when_accident_day | default_if_none:"?"}}.{{person.data_when_accident_month | default_if_none:"?"}}.{{person.data_when_accident_year | default_if_none:"?"}}
+                                                                    </li>
+                                                                {% endif %}
+                                                            {% endif %}
+                                                            {% if person.place_of_rip %}
+                                                                <li class="list-group-item">
+                                                                   {% trans "Місце поховання" %}: {{person.place_of_rip}}
+                                                                </li>
+                                                            {% endif %}
+                                                            {% if person.place_of_rip_date_day or person.place_of_rip_date_month or person.place_of_rip_date_year %}
+                                                                <li class="list-group-item">
+                                                                     {% trans "Дата поховання" %}: {{person.place_of_rip_date_day | default_if_none:"?"}}.{{person.place_of_rip_date_month | default_if_none:"?"}}.{{person.place_of_rip_date_year | default_if_none:"?"}}
+                                                                </li>
+                                                            {% endif %}
+                                                            {% if person.additional_info %}
+                                                                <li class="list-group-item">
+                                                                   {% trans "Додаткова інформація" %}: {{person.additional_info}}
+                                                                </li>
+                                                            {% endif %}
+                                                        </ul>
+                                                        {% if request.user.is_authenticated %}
+                                                        <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true" style="background-color: transparent; max-height: 100%; width: 100%;">
+                                                              <div class="modal-dialog">
+                                                                    <div class="modal-content">
+                                                                          <div class="modal-header">
+                                                                            <h5 class="modal-title" id="exampleModalLabel3">{% trans "Повідомити про помилку" %}</h5>
+                                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                          </div>
+                                                                          <div class="modal-body">
+                                                                            <form action="{{person.get_absolute_url}}" method="POST" class="text-centers">
+                                                                                {% csrf_token %}
+                                                                                <!-- -->
+                                                                                {% for field in form %}
+                                                                                    {% if forloop.counter == 1 %}
+                                                                                    <div>
+                                                                                        {% trans "Назва помилки" %}:
+                                                                                    </div>
+                                                                                    {% else %}
+                                                                                    <div>
+                                                                                        {% trans "Опис помилки" %}:
+                                                                                    </div>
+                                                                                    {% endif %}
+                                                                                    <div>{{ field }}</div>
+                                                                                {% endfor %}
+                                                                                <!-- -->
+                                                                                  <input type="submit" class="btn rounded-pill btn-secondary grey lighten-2" style="color: black;" value="{% trans 'Повідомити про помилку' %}">
+                                                                            </form>
+                                                                          </div>
+                                                                    </div>
+                                                              </div>
+                                                        </div>
+                                                        {% else %}
+                                                        <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true" style="background-color: transparent; max-height: 100%; width: 100%;">
+                                                              <div class="modal-dialog">
+                                                                    <div class="modal-content">
+                                                                          <div class="modal-header">
+                                                                            <h5 class="modal-title" id="exampleModalLabel3">{% trans "Реєстрація або вхід" %}</h5>
+                                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                          </div>
+
+                                                                          <div class="modal-body">
+                                                                            <p>{% trans "Будь ласка, здійсніть реєстрацію або вхід за посиланням нижче" %}:</p>
+
+                                                                            <a type="button" class="btn btn-light blue darken-1" href="{% url 'reg' %}">{% trans "Зареєструватися" %}</a>
+
+                                                                            <a type="button" class="btn btn-light blue darken-1" href="{% url 'login' %}">{% trans "Вхід" %}</a>
+
+                                                                          </div>
+                                                                    </div>
+                                                              </div>
+                                                        </div>
+                                                        {% endif %}
+                                                        <div class="card-body">
+                                                            <div class="demo-inline-spacing " style="text-align: center">
+                                                                    <a type="button" class="btn rounded-pill btn-secondary grey lighten-2" data-bs-toggle="modal" data-bs-target="#exampleModal3" style="color: black;" href="">{% trans "Повідомити про помилку" %}</a>
+                                                             </div>
+                                                        </div>
+                                                        <!-- To here -->
+                                                  </div>
+                                                </div>
+                                            </div>
+                                              </div>
+                                      </div>
+                                      </div>
+
+                                      <hr class="my-5">
+                                        {#  Carousel images  #}
+                                      <div class="carousel1 owl-carousel owl-theme">
+                                          {% for image in images %}
+                                                <div class="owl-carousel-info-wrap item">
+                                                    <a href="{{image.image.url}}" class="fancybox" data-fancybox="gallery">
+                                                        <img src="{{image.image.url}}"
+                                                        class="owl-carousel-image img-fluid" alt="">
+                                                    </a>
+                                                </div>
+                                          {% endfor %}
+                                      </div>
+                                  </div>
+                                    {#  Загальна інформація  #}
+                                    {#  Служба   #}
+                                  <div class="tab-pane fade" id="millitary" role="tabpanel" aria-labelledby="millitary_label">
+                                      <div class="container-fluid">
+                                          <div class="row">
+                                              <div class="col-lg-4 col-sm-12 mb-2">
+                                                  <img src="{% check_detail_image images %}"
+                                                       class="rounded mx-auto d-block img-fluid" alt="..." >
+                                              </div>
+                                              <div class="col-lg-8 col-sm-12">
+                                                  <div class="card overflow-hidden mb-4">
+                                                <h5 class="card-header">{% trans "Інформація" %}</h5>
+                                                <div class="card-body ps" id="vertical-example-1">
+                                                    <div class="card-body p-0">
+                                                        <ul class="list-group list-group-flush">
+                                                            {% if person.rank or person.rank_choice %}
+                                                                <li class="list-group-item">
+                                                                    {% trans "Військове звання" %}: {{person.rank_choice|default_if_none:person.rank}}
+                                                                </li>
+                                                            {% endif %}
+                                                            {% if person.job_title %}
+                                                                <li class="list-group-item">
+                                                                    {% trans "Посада" %}: {{person.job_title}}
+                                                                </li>
+                                                            {% endif %}
+                                                            {% if person.military_unit %}
+                                                                <li class="list-group-item">
+                                                                    {% trans "Військова частина" %}: {{person.military_unit}}
+                                                                </li>
+                                                            {% endif %}
+                                                            {% if person.type_of_army or person.type_of_army_choice %}
+                                                                <li class="list-group-item">
+                                                                    {% trans "Рід військ" %}: {{person.type_of_army_choice|default_if_none:person.type_of_army}}
+                                                                </li>
+                                                            {% endif %}
+                                                            <!-- -->
+                                                            {% if person.military_from %}
+                                                                <li class="list-group-item">
+                                                                    {% trans "Місце знаходження військової частини" %}: {{person.military_from}}
+                                                                </li>
+                                                            {% endif %}
+                                                            {% if person.commander %}
+                                                                <li class="list-group-item">
+                                                                    {% trans "Командир" %}: {{person.commander}}
+                                                                </li>
+                                                            {% endif %}
+                                                        </ul>
+                                                        <!-- From here -->
+                                                        {% if request.user.is_authenticated %}
+                                                        <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel4" aria-hidden="true" style="background-color: transparent; max-height: 100%; width: 100%;">
+                                                              <div class="modal-dialog">
+                                                                    <div class="modal-content">
+                                                                          <div class="modal-header">
+                                                                            <h5 class="modal-title" id="exampleModalLabel4">{% trans "Повідомити про помилку" %}</h5>
+                                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                          </div>
+                                                                          <div class="modal-body">
+                                                                            <form action="{{person.get_absolute_url}}" method="POST" class="text-centers">
+                                                                                {% csrf_token %}
+                                                                                {% for field in form %}
+                                                                                    {% if forloop.counter == 1 %}
+                                                                                    <div>
+                                                                                        {% trans "Назва помилки" %}:
+                                                                                    </div>
+                                                                                    {% else %}
+                                                                                    <div>
+                                                                                        {% trans "Опис помилки" %}:
+                                                                                    </div>
+                                                                                    {% endif %}
+                                                                                    <div>{{ field }}</div>
+                                                                                {% endfor %}
+                                                                                <!-- -->
+                                                                                  <input type="submit" class="btn rounded-pill btn-secondary grey lighten-2" style="color: black;" value="{% trans 'Повідомити про помилку' %}">
+                                                                            </form>
+                                                                          </div>
+                                                                    </div>
+                                                              </div>
+                                                        </div>
+                                                        {% else %}
+                                                        <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel4" aria-hidden="true" style="background-color: transparent; max-height: 100%; width: 100%;">
+                                                              <div class="modal-dialog">
+                                                                    <div class="modal-content">
+                                                                          <div class="modal-header">
+                                                                            <h5 class="modal-title" id="exampleModalLabel3">{% trans "Реєстрація або вхід" %}</h5>
+                                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                          </div>
+
+                                                                          <div class="modal-body">
+                                                                            <p>{% trans "Будь ласка, здійсніть реєстрацію або вхід за посиланням нижче" %}:</p>
+
+                                                                            <a type="button" class="btn btn-light blue darken-1" href="{% url 'reg' %}">{% trans "Зареєструватися" %}</a>
+
+                                                                            <a type="button" class="btn btn-light blue darken-1" href="{% url 'login' %}">{% trans "Вхід" %}</a>
+
+                                                                          </div>
+                                                                    </div>
+                                                              </div>
+                                                        </div>
+                                                        {% endif %}
+                                                        <div class="card-body">
+                                                            <div class="demo-inline-spacing " style="text-align: center">
+                                                                    <a type="button" class="btn rounded-pill btn-secondary grey lighten-2" data-bs-toggle="modal" data-bs-target="#exampleModal4" style="color: black;" href="">{% trans "Повідомити про помилку" %}</a>
+                                                             </div>
+                                                        </div>
+                                                        <!-- To here -->
+                                                  </div>
+                                                </div>
+                                            </div>
+                                              </div>
+                                      </div>
+                                      </div>
+
+                                  </div>
+                                    {#  Служба   #}
+                                    {#   Джерела  #}
+                                  <div class="tab-pane fade" id="inf" role="tabpanel" aria-labelledby="inf_label">
+                                      <div class="card overflow-hidden mb-4">
+                                            <h5 class="card-header">{% trans "Джерела" %}</h5>
+                                            <div class="card-body ps" id="vertical-example">
+                                                <div class="card-body p-0">
+                                                    <ul class="list-group list-group-flush">
+                                                        {% for inf in person.source_as_list %}
+                                                            <li class="list-group-item">
+                                                                <a href="{{ inf }}" target='_blank'>
+                                                                    {{ inf }}
+                                                                </a>
+                                                            </li>
+                                                        {% endfor %}
+                                                    </ul>
+                                              </div>
+                                            </div>
+                                        </div>
+                                          <div class="carousel2 owl-carousel owl-theme">
+                                               {% for source_image in source_images %}
+                                                <div class="owl-carousel-info-wrap item">
+                                                    <a href="{{source_image.image.url}}" class="fancybox" data-fancybox="gallery" >
+                                                        <img src="{{source_image.image.url}}"
+                                                        class="owl-carousel-image img-fluid" alt="">
+                                                    </a>
+                                                </div>
+                                              {% endfor %}
+                                          </div>
+                                  </div>
+                                    {#   Джерела  #}
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endblock %}
+
+    <!-- Page JS   -->
+    {% block page_scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+        <script>
+            $(document).ready(function() {
+              $(".fancybox").fancybox({
+                buttons: [
+                  'zoom',
+                  'close'
+                ],
+                arrows: true,
+                opacity: true,
+                protect: true,
+                smallBtn: false,
+                animationDuration: 450,
+                image: {
+                    zoom: {
+                      enabled: true,
+                      maxRatio: 7
+                    }
+                  }
+              });
+            });
+        </script>
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'js/custom.js' %}"></script>
+        <script src="{% static 'js/person.js' %}"></script>
+    {% endblock %}

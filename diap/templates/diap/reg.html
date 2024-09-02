@@ -1,0 +1,36 @@
+{% extends 'diap/base_log_reg.html' %}
+{% load static %}
+{% load i18n %}
+
+<!-- -->
+{% block page_css %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        nav {
+            line-height:normal;
+            height: auto;
+        }
+    </style>
+{% endblock %}
+<!-- -->
+{% block main_content %}
+  <div class="popups_inner">
+      <div class="popup logup_popup">
+          <h3>{% trans "Реєстрація" %}</h3>
+          <form class="my-form" action="{% url 'reg' %}" method="POST" class="text-centers" style="width: 500px;">
+              {% csrf_token %}
+              {{ form }}
+              <input type="submit" class="btn blue darken-1" value="{% trans 'Зареєструватися' %}" style="height: 41.1px; padding: 0; width: 100%;">
+              <a class="btn blue darken-1" href="{% url 'login' %}" style="width: 100%; border: 1px solid #afafaf; border-radius:10px; font-size: small; height: 41.1px; padding: 0;">{% trans "Ввійти" %}</a>
+          </form>
+      </div>
+  </div>
+  <div style="margin-top: 40px; margin-bottom: 50px; width: 50%; margin-left: auto; margin-right: auto;">
+        <span class="text-center" style=" font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.5; font-weight: 400; color: #333333;  margin-bottom: 20px;"><p>{% trans "Вся інформація, викладена на сайті, є у вільному доступі та її перегляд не потребує авторизації.<br>Реєстрація на сайті необхідна з метою повідомлення про помилку в анкеті та двостороннього зв’язку." %}</p></span>
+    </div>
+{% endblock %}
+<!-- -->
+{% block page_scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+{% endblock %}
+<!-- -->

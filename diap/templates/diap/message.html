@@ -1,0 +1,247 @@
+
+{% extends 'diap/base_log_reg.html' %}
+{% load static %}
+{% load i18n %}
+<!-- -->
+{% block page_css %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- 2 start -->
+    <style>
+      .pad {
+          padding: 0 0.15rem !important;
+      }
+          nav {
+            line-height:normal;
+            height: auto;
+        }
+    </style>
+    <!-- 2 end -->
+{% endblock %}
+<!-- -->
+{% block main_content %}
+  <div class="popups_inner">
+      <div class="popup logup_popup" style="width: 100%;">
+          <h3>{% trans "Повідомлення про загиблого" %}</h3>
+          <form enctype="multipart/form-data" action="{% url 'message' %}" method="POST" style="width: 100%;"> 
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-lg-4 col-md-12">
+                  <h5>{% trans "Загальна інформація" %}</h5>
+                  <div class="input-group-lg">
+                    {% if person.last_name.errors %}
+                    <div class="alert alert-danger">
+                      {{ person.last_name.errors }}
+                    </div>
+                    {% endif %}
+                    {{ person.last_name.label_tag }} {{ person.last_name }}
+                    {% if person.first_name.errors %}
+                    <div class="alert alert-danger">
+                      {{ person.first_name.errors }}
+                    </div>
+                    {% endif %}
+                    {{ person.first_name.label_tag }} {{ person.first_name }}
+                    {% if person.middle_name.errors %}
+                    <div class="alert alert-danger">
+                      {{ person.middle_name.errors }}
+                    </div>
+                    {% endif %}
+                    {{ person.middle_name.label_tag }} {{ person.middle_name }}
+                    <div class="row" style="width: 100%;">
+                      <div class="col col-lg-4 pad">
+                        {% if person.birthday_day.errors %}
+                        <div class="alert alert-danger">
+                          {{ person.birthday_day.errors }}
+                        </div>
+                        {% endif %}
+                        {{ person.birthday_day.label_tag }} {{ person.birthday_day }}
+                      </div>
+                      <div class="col col-lg-4 pad">
+                        {% if person.birthday_month.errors %}
+                        <div class="alert alert-danger">
+                          {{ person.birthday_month.errors }}
+                        </div>
+                        {% endif %}
+                        {{ person.birthday_month.label_tag }} {{ person.birthday_month }}
+                      </div>
+                      <div class="col col-lg-4 pad">
+                        {% if person.birthday_year.errors %}
+                        <div class="alert alert-danger">
+                          {{ person.birthday_year.errors }}
+                        </div>
+                        {% endif %}
+                        {{ person.birthday_year.label_tag }} {{ person.birthday_year }}
+                      </div>
+                    </div>
+                    {% if person.citizenship.errors %}
+                    <div class="alert alert-danger">
+                      {{ person.citizenship.errors }}
+                    </div>
+                    {% endif %}
+                    {{ person.citizenship.label_tag }} {{ person.citizenship }}
+                    {% if person.place_of_birthday.errors %}
+                    <div class="alert alert-danger">
+                      {{ person.place_of_birthday.errors }}
+                    </div>
+                    {% endif %}
+                    {{ person.place_of_birthday.label_tag }} {{ person.place_of_birthday }}
+                    {% if person.place_of_living.errors %}
+                    <div class="alert alert-danger">
+                      {{ person.place_of_living.errors }}
+                    </div>
+                    {% endif %}
+                    {{ person.place_of_living.label_tag }} {{ person.place_of_living }}
+                    {% if person.place_where_accident.errors %}
+                    <div class="alert alert-danger">
+                      {{ person.place_where_accident.errors }}
+                    </div>
+                    {% endif %}
+                    {{ person.place_where_accident.label_tag }} {{ person.place_where_accident }}
+                    <div class="row" style="width: 100%;">
+                      <div class="col col-lg-4 pad">
+                        {% if person.data_when_accident_day.errors %}
+                        <div class="alert alert-danger">
+                          {{ person.data_when_accident_day.errors }}
+                        </div>
+                        {% endif %}
+                        {{ person.data_when_accident_day.label_tag }} {{ person.data_when_accident_day }}
+                      </div>
+                      <div class="col col-lg-4 pad">
+                        {% if person.data_when_accident_month.errors %}
+                        <div class="alert alert-danger">
+                          {{ person.data_when_accident_month.errors }}
+                        </div>
+                        {% endif %}
+                        {{ person.data_when_accident_month.label_tag }} {{ person.data_when_accident_month }}
+                      </div>
+                      <div class="col col-lg-4 pad">
+                        {% if person.data_when_accident_year.errors %}
+                        <div class="alert alert-danger">
+                          {{ person.data_when_accident_year.errors }}
+                        </div>
+                        {% endif %}
+                        {{ person.data_when_accident_year.label_tag }} {{ person.data_when_accident_year }}
+                      </div>
+                    </div>
+                    {% if person.place_of_rip.errors %}
+                    <div class="alert alert-danger">
+                      {{ person.place_of_rip.errors }}
+                    </div>
+                    {% endif %}
+                    {{ person.place_of_rip.label_tag }} {{ person.place_of_rip }}
+                    <div class="row" style="width: 100%;">
+                      <div class="col col-lg-4 pad">
+                        {% if person.place_of_rip_date_day.errors %}
+                        <div class="alert alert-danger">
+                          {{ person.place_of_rip_date_day.errors }}
+                        </div>
+                        {% endif %}
+                        {{ person.place_of_rip_date_day.label_tag }} {{ person.place_of_rip_date_day }}
+                      </div>
+                      <div class="col col-lg-4 pad">
+                        {% if person.place_of_rip_date_month.errors %}
+                        <div class="alert alert-danger">
+                          {{ person.place_of_rip_date_month.errors }}
+                        </div>
+                        {% endif %}
+                        {{ person.place_of_rip_date_month.label_tag }} {{ person.place_of_rip_date_month }}
+                      </div>
+                      <div class="col col-lg-4 pad">
+                        {% if person.place_of_rip_date_year.errors %}
+                        <div class="alert alert-danger">
+                          {{ person.place_of_rip_date_year.errors }}
+                        </div>
+                        {% endif %}
+                        {{ person.place_of_rip_date_year.label_tag }} {{ person.place_of_rip_date_year }}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-md-12">
+                  <h5>{% trans "Служба" %}</h5>
+                  {% if person.type_of_army_choice.errors %}
+                  <div class="alert alert-danger">
+                    {{ person.type_of_army_choice.errors }}
+                  </div>
+                  {% endif %}
+                  {{ person.type_of_army_choice.label_tag }} {{ person.type_of_army_choice }}
+                  {% if person.rank_choice.errors %}
+                  <div class="alert alert-danger">
+                    {{ person.rank_choice.errors }}
+                  </div>
+                  {% endif %}
+                  {{ person.rank_choice.label_tag }} {{ person.rank_choice }}
+                  {% if person.job_title.errors %}
+                  <div class="alert alert-danger">
+                    {{ person.job_title.errors }}
+                  </div>
+                  {% endif %}
+                  {{ person.job_title.label_tag }} {{ person.job_title }}
+                  {% if person.military_unit.errors %}
+                  <div class="alert alert-danger">
+                    {{ person.military_unit.errors }}
+                  </div>
+                  {% endif %}
+                  {{ person.military_unit.label_tag }} {{ person.military_unit }}
+                  {% if person.military_from.errors %}
+                  <div class="alert alert-danger">
+                    {{ person.military_from.errors }}
+                  </div>
+                  {% endif %}
+                  {{ person.military_from.label_tag }} {{ person.military_from }}
+                </div>
+
+                <div class="col-lg-4 col-md-12">
+                  <h5>{% trans "Додаткова інформація" %}</h5>
+                  <div class="mb-3">
+                    {% if person.additional_info.errors %}
+                    <div class="alert alert-danger">
+                      {{ person.additional_info.errors }}
+                    </div>
+                    {% endif %}
+                    {{ person.additional_info.label_tag }} {{ person.additional_info }}
+                  </div>
+                  <div class="mb-3">
+                    {% if person.source.errors %}
+                    <div class="alert alert-danger">
+                      {{ person.source.errors }}
+                    </div>
+                    {% endif %}
+                    {{ person.source.label_tag }} {{ person.source }}
+                  </div>
+                  <div>
+
+                    {% if photo.image.errors %}
+                    <div class="alert alert-danger">
+                      {{ photo.image.errors }}
+                    </div>
+                    {% endif %}
+                    {{ photo.image.label_tag }} {{ photo.image }}
+
+                    {% if photo2.image.errors %}
+                    <div class="alert alert-danger">
+                      {{ photo2.image.errors }}
+                    </div>
+                    {% endif %}
+                    {{ photo2.image.label_tag }} {{ photo2.image }}
+
+                    {% if photo3.image.errors %}
+                    <div class="alert alert-danger">
+                      {{ photo3.image.errors }}
+                    </div>
+                    {% endif %}
+                    {{ photo3.image.label_tag }} {{ photo3.image }}
+                  </div>
+                </div>
+              </div>
+
+              <input type="submit" class="btn blue darken-1" value="{% trans 'Відправити повідомлення' %}" style="height: 41.1px; padding: 0; width: 100%;">
+          </form>
+      </div>
+  </div>
+{% endblock %}
+<!-- -->
+{% block page_scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+{% endblock %}
+<!-- -->

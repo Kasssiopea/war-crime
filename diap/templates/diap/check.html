@@ -1,0 +1,198 @@
+{% load image_tag %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.img-small {
+    width: 150px;
+    height: 150px;
+}
+
+h6 {
+    font-size: 25px;
+}
+
+td:first-child {
+    width: 10%;
+}
+
+td:last-child {
+    width: 75%;
+}
+
+.hidden-text {
+    display: none;
+}
+</style>
+
+{% for person in persons %}
+<table>
+    <thead>
+        <tr>
+            <th>Фото</th>
+            <th>ПІБ</th>
+            <th>Статус поста</th>
+            <th>Посилання</th>
+            <th>Группа</th>
+            <th>Інформація</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <a href="/admin/diap/person/{{ person.id }}/change/">
+                    <img class="card-img-top d-block img-small" src="{{ person.images.first.image.url|default:'https://sabilaw.org/wp-content/uploads/2020/11/img_2263-1024x777.jpg'}}" alt="Card image cap" href="#">
+                </a>
+            </td>
+            <td>
+                <div class="card-body p-0">
+                    <a>
+                        <h6 class="card-title text-center">
+                            {{ person.last_name| default_if_none:"" }} {{ person.first_name| default_if_none:"" }} {{ person.middle_name | default_if_none:"" }}
+                        </h6>
+                    </a>
+                </div>
+            </td>
+            <td>
+                <div class="card-body p-1">
+                    <a>
+                        <h6 class="card-title text-center">
+                            {{person.post_status| default_if_none:"" }}
+                        </h6>
+                    </a>
+                </div>
+            </td>
+            <td>
+                <div class="card-body p-1">
+                    <h6 class="card-title text-center">
+                        {% if person.post_status  == 'PUBLISHED' %}
+                            <a href="/person/{{ person.pk }}">/person/{{ person.pk }}</a>
+                        {% else %}
+                            ID = {{ person.pk }}
+                        {% endif %}
+                    </h6>
+                </div>
+            </td>
+            <td>
+                <div class="card-body p-1">
+                    <h6 class="card-title text-center">
+                        {% get_group person %}
+                    </h6>
+                </div>
+            </td>
+            <td>
+                <div class="card-body p-1">
+                    <button class="showButton" data-target="{{ forloop.counter }}">Відкрити</button>
+                    <button class="hideButton" data-target="{{ forloop.counter }}" style="display: none;">Закрити</button>
+                    <div class="bottomBlock">
+                        <p class="hiddenText" style="display: none;">
+                            {% if person.date_of_birthday %}
+                                    Дата народження: {{ person.date_of_birthday }}<br>
+                            {% endif %}
+                            {% if person.citizenship %}
+                                    Громадянство: {{ person.citizenship }}<br>
+                            {% endif %}
+                            {% if person.passport %}
+                                    Паспорт: {{ person.passport }}<br>
+                            {% endif %}
+                            {% if person.individual_identification_number %}
+                                    Ідентифікаційний код: {{ person.individual_identification_number }}<br>
+                            {% endif %}
+                            {% if person.place_of_birthday %}
+                                    Місце народження: {{ person.place_of_birthday }}<br>
+                            {% endif %}
+                            {% if person.place_of_living %}
+                                    Місце проживання: {{ person.place_of_living }}<br>
+                            {% endif %}
+                            {% if person.additional_info %}
+                                    Додаткова інформація: {{ person.additional_info }}<br>
+                            {% endif %}
+                            {% if person.place_of_rip %}
+                                    Дата загибелі: {{ person.date_of_rip }}<br>
+                            {% endif %}
+                            {% if person.place_where_accident %}
+                                    Місце загибелі: {{ person.place_where_accident }}<br>
+                            {% endif %}
+                            {% if person.place_of_rip %}
+                                    Місце поховання: {{ person.place_of_rip }}<br>
+                            {% endif %}
+                            {% if person.date_of_rip %}
+                                    Дата поховання: {{ person.place_of_rip }}<br>
+                            {% endif %}
+                            {% if person.type_of_army %}
+                                    Рід військ: {{ person.type_of_army }}<br>
+                            {% endif %}
+                            {% if person.rank_choice %}
+                                    Військове звання: {{ person.rank_choice }}<br>
+                            {% endif %}
+                            {% if person.job_title %}
+                                    Посада: {{ person.job_title }}<br>
+                            {% endif %}
+                            {% if person.military_unit %}
+                                    Військова частина: {{ person.military_unit }}<br>
+                            {% endif %}
+                            {% if person.military_from %}
+                                    Місцезнаходження військової частини: {{ person.military_from }}<br>
+                            {% endif %}
+                            {% if person.source %}
+                                Джерела: {{ person.source }}<br>
+                            {% endif %}
+
+
+
+                        </p>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+{% endfor %}
+
+<script>
+    const showButtons = document.querySelectorAll(".showButton");
+    const hideButtons = document.querySelectorAll(".hideButton");
+    const hiddenTexts = document.querySelectorAll(".hiddenText");
+
+    showButtons.forEach((button, index) => {
+        button.addEventListener("click", function() {
+            hiddenTexts[index].style.display = "block";
+            showButtons[index].style.display = "none";
+            hideButtons[index].style.display = "inline";
+        });
+    });
+
+    hideButtons.forEach((button, index) => {
+        button.addEventListener("click", function() {
+            hiddenTexts[index].style.display = "none";
+            hideButtons[index].style.display = "none";
+            showButtons[index].style.display = "inline";
+        });
+    });
+</script>
+
+</body>
+</html>

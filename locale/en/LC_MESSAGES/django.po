@@ -1,0 +1,2431 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#: diap/models/choices.py:37 diap/models/choices.py:53
+#: diap/models/choices.py:94 diap/models/choices.py:110
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-24 07:54+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: DRF_DIAP/settings.py:124 diap/templates/diap/base.html:103
+#: diap/templates/diap/base.html:148 diap/templates/diap/base.html:167
+#: diap/templates/diap/base_log_reg.html:102
+#: diap/templates/diap/base_log_reg.html:146
+#: diap/templates/diap/base_log_reg.html:165
+msgid "English"
+msgstr "English"
+
+#: DRF_DIAP/settings.py:125
+msgid "Russian"
+msgstr "Russian"
+
+#: DRF_DIAP/settings.py:126
+msgid "Ukrainian"
+msgstr "Ukrainian"
+
+#: diap/admin.py:77
+msgid "With image"
+msgstr ""
+
+#: diap/admin.py:78
+msgid "Without image"
+msgstr ""
+
+#: diap/admin.py:185 moderator/admin.py:43
+#, python-format
+msgid "%d Person was successfully marked as published."
+msgid_plural "%d Persons were successfully marked as published."
+msgstr[0] ""
+msgstr[1] ""
+
+#: diap/admin.py:194 moderator/admin.py:52
+#, python-format
+msgid "%d Person was successfully marked as processing."
+msgid_plural "%d Persons were successfully marked as processing."
+msgstr[0] ""
+msgstr[1] ""
+
+#: diap/admin.py:203 moderator/admin.py:61
+#, python-format
+msgid "%d Person was successfully marked as deleted."
+msgid_plural "%d Persons were successfully marked as deleted."
+msgstr[0] ""
+msgstr[1] ""
+
+#: diap/admin.py:212
+#, python-format
+msgid "%d The person has been successfully marked for moderation"
+msgid_plural "%d The person has been successfully marked for moderation"
+msgstr[0] ""
+msgstr[1] ""
+
+#: diap/admin.py:221 diap/admin.py:230
+#, python-format
+msgid "%d The recording was successfully removed from personal entries"
+msgid_plural "%d The recording was successfully removed from personal entries"
+msgstr[0] ""
+msgstr[1] ""
+
+#: diap/admin.py:243
+#, python-format
+msgid "%d The recording was successfully return"
+msgid_plural "%d The recording was successfully return"
+msgstr[0] ""
+msgstr[1] ""
+
+#: diap/forms/callback_form.py:108
+msgid "Недопустимий формат файла."
+msgstr ""
+
+#: diap/forms/callback_form.py:115
+msgid "Розмір файла повинен бути не більше 3 Мб."
+msgstr "The size of the file should not exceed 3 MB."
+
+#: diap/forms/client.py:7 diap/forms/client.py:78
+msgid "Логін"
+msgstr "Login"
+
+#: diap/forms/client.py:9
+msgid "Ваш логін"
+msgstr "Your login"
+
+#: diap/forms/client.py:11
+msgid ""
+"Некоректне ім'я користувача. Ім'я користувача може містити в собі тільки "
+"букви, цифри та символи @/./+/-/_."
+msgstr ""
+"Invalid username. Username can only contain letters, numbers and symbols @/./"
+"+/-/_."
+
+#: diap/forms/client.py:12
+msgid "Ім'я користувача вже зайнято."
+msgstr "Username is already taken."
+
+#: diap/forms/client.py:16
+msgid "Ваша електронна пошта (example@example.com)"
+msgstr "Your email (example@example.com)"
+
+#: diap/forms/client.py:18
+msgid "Неправільний формат адреси електронної пошти."
+msgstr "Invalid email address format."
+
+#: diap/forms/client.py:19 diap/forms/client.py:82
+msgid "Пароль"
+msgstr "Password"
+
+#: diap/forms/client.py:21
+msgid "Створіть пароль"
+msgstr "Create a password"
+
+#: diap/forms/client.py:24 diap/forms/client.py:26
+msgid "Повторіть пароль"
+msgstr "Repeat the password"
+
+#: diap/forms/client.py:31
+msgid "Паролі не співпадають."
+msgstr "Passwords do not match."
+
+#: diap/forms/client.py:32
+msgid "Пароль повинен містити не менше 8 символів."
+msgstr "The password must contain at least 8 characters."
+
+#: diap/forms/client.py:33
+msgid ""
+"Пароль містить слова, що часто використовуються. Будь-ласка, використовуйте "
+"складніший пароль."
+msgstr ""
+"Password contains frequently used words. Please use more secure password."
+
+#: diap/forms/client.py:34
+msgid "Пароль схожий на ім'я користувача."
+msgstr "The password is similar to the username."
+
+#: diap/forms/client.py:35
+msgid "Пароль не може складатись тільки з цифр."
+msgstr "The password cannot consist only of numbers."
+
+#: diap/forms/client.py:80
+msgid "Введіть логін"
+msgstr "Enter your login"
+
+#: diap/forms/client.py:84
+msgid "Введіть пароль"
+msgstr "Enter your password"
+
+#: diap/forms/client.py:88
+msgid "Неправильне ім'я користувача або пароль."
+msgstr "Incorrect username or password."
+
+#: diap/forms/client.py:89
+msgid "Цей аккаунт неактивний."
+msgstr "This account is inactive."
+
+#: diap/models/callback.py:14 diap/models/choices.py:21
+msgid "Deleted"
+msgstr ""
+
+#: diap/models/callback.py:15 diap/models/choices.py:19
+#: diap/models/choices.py:25
+msgid "Published"
+msgstr ""
+
+#: diap/models/callback.py:16 diap/models/choices.py:20
+msgid "Processing"
+msgstr ""
+
+#: diap/models/choices.py:16
+msgid "Incomings"
+msgstr ""
+
+#: diap/models/choices.py:17
+msgid "For moderation"
+msgstr ""
+
+#: diap/models/choices.py:18
+msgid "For check"
+msgstr ""
+
+#: diap/models/choices.py:26
+msgid "Not published"
+msgstr ""
+
+#: diap/models/choices.py:30
+msgid "Alive"
+msgstr ""
+
+#: diap/models/choices.py:31
+msgid "Captivity"
+msgstr ""
+
+#: diap/models/choices.py:32
+msgid "Die"
+msgstr ""
+
+#: diap/models/choices.py:33
+msgid "Missing person"
+msgstr ""
+
+#: diap/models/choices.py:38 diap/views.py:474
+msgid "Сухопутные войска"
+msgstr "Ground troops"
+
+#: diap/models/choices.py:39 diap/views.py:475
+msgid "Воздушно-космические силы"
+msgstr "Aerospace Forces"
+
+#: diap/models/choices.py:40 diap/views.py:476
+msgid "Военно-Морской Флот"
+msgstr "Navy"
+
+#: diap/models/choices.py:41 diap/views.py:477
+msgid "Ракетные войска стратегического назначения"
+msgstr "Strategic Missile Forces"
+
+#: diap/models/choices.py:42 diap/views.py:478
+msgid "Воздушно-десантные войска"
+msgstr "Airborne Forces"
+
+#: diap/models/choices.py:44
+msgid "Войска национальной гвардии Российской Федерации"
+msgstr "Troops of the National Guard of the Russian Federation"
+
+#: diap/models/choices.py:45 diap/views.py:481
+msgid "ЧВК"
+msgstr "Private military companies"
+
+#: diap/models/choices.py:46 diap/views.py:481
+msgid "МВД"
+msgstr "MIA"
+
+#: diap/models/choices.py:47 diap/views.py:479
+msgid "Другие подразделения МО РФ"
+msgstr "Other units of the Russian Defense Ministry"
+
+#: diap/models/choices.py:48
+msgid "Незаконные вооружённые формирования"
+msgstr "Illegal armed formations"
+
+#: diap/models/choices.py:54
+msgid "Рядовой"
+msgstr "Private"
+
+#: diap/models/choices.py:55
+msgid "Ефрейтор"
+msgstr "Corporal"
+
+#: diap/models/choices.py:56
+msgid "Младший сержант"
+msgstr "Lance Sergeant"
+
+#: diap/models/choices.py:57
+msgid "Сержант"
+msgstr "Sergeant"
+
+#: diap/models/choices.py:58
+msgid "Старший сержант"
+msgstr "Staff Sergeant"
+
+#: diap/models/choices.py:59
+msgid "Старшина"
+msgstr "Sergeant major"
+
+#: diap/models/choices.py:60
+msgid "Прапорщик"
+msgstr "Warrant officer"
+
+#: diap/models/choices.py:61
+msgid "Старший прапорщик"
+msgstr "Senior Warrant Officer"
+
+#: diap/models/choices.py:62
+msgid "Младший лейтенант"
+msgstr "Sub-lieutenant"
+
+#: diap/models/choices.py:63
+msgid "Лейтенант"
+msgstr "Lieutenant"
+
+#: diap/models/choices.py:64
+msgid "Старший лейтенант"
+msgstr "Senior Lieutenant"
+
+#: diap/models/choices.py:65
+msgid "Капитан"
+msgstr "Captain"
+
+#: diap/models/choices.py:66
+msgid "Майор"
+msgstr "Major"
+
+#: diap/models/choices.py:67
+msgid "Подполковник"
+msgstr "Lieutenant colonel"
+
+#: diap/models/choices.py:68
+msgid "Полковник"
+msgstr "Colonel"
+
+#: diap/models/choices.py:69
+msgid "Генерал-майор"
+msgstr "Major General"
+
+#: diap/models/choices.py:70
+msgid "Генерал-лейтенант"
+msgstr "Lieutenant General"
+
+#: diap/models/choices.py:71
+msgid "Генерал-полковник"
+msgstr "Colonel General"
+
+#: diap/models/choices.py:72
+msgid "Генерал армии"
+msgstr "Army General"
+
+#: diap/models/choices.py:73
+msgid "Маршал Российской Федерации"
+msgstr "Marshal of the Russian Federation"
+
+#: diap/models/choices.py:75
+msgid "Матрос"
+msgstr "Sailor"
+
+#: diap/models/choices.py:76
+msgid "Старший матрос"
+msgstr "Senior sailor"
+
+#: diap/models/choices.py:77
+msgid "Старшина 2 статьи"
+msgstr "Petty officer of 2nd articles"
+
+#: diap/models/choices.py:78
+msgid "Старшина 1 статьи"
+msgstr "Petty officer of 1st article"
+
+#: diap/models/choices.py:79
+msgid "Главный старшина"
+msgstr "Chief sergeant major"
+
+#: diap/models/choices.py:80
+msgid "Главный корабельный старшина"
+msgstr "Chief ship sergeant major"
+
+#: diap/models/choices.py:81
+msgid "Мичман"
+msgstr "Midshipman"
+
+#: diap/models/choices.py:82
+msgid "Старший мичман"
+msgstr "Senior midshipman"
+
+#: diap/models/choices.py:83
+msgid "Капитан-лейтенант"
+msgstr "Lieutenant Commander"
+
+#: diap/models/choices.py:84
+msgid "Капитан 3 ранга"
+msgstr "Captain of 3rd rank"
+
+#: diap/models/choices.py:85
+msgid "Капитан 2 ранга"
+msgstr "Captain of 2nd rank"
+
+#: diap/models/choices.py:86
+msgid "Капитан 1 ранга"
+msgstr "Captain of 1st rank"
+
+#: diap/models/choices.py:87
+msgid "Контр-адмирал"
+msgstr "Rear-Admiral"
+
+#: diap/models/choices.py:88
+msgid "Вице-адмирал"
+msgstr "Vice Admiral"
+
+#: diap/models/choices.py:89
+msgid "Адмирал\""
+msgstr "Admiral\""
+
+#: diap/models/choices.py:90
+msgid "Адмирал флота"
+msgstr "Fleet Admiral"
+
+#: diap/models/choices.py:95
+msgid "Січень | Январь"
+msgstr "January"
+
+#: diap/models/choices.py:96
+msgid "Лютий | Февраль"
+msgstr "February"
+
+#: diap/models/choices.py:97
+msgid "Березень | Март"
+msgstr "March"
+
+#: diap/models/choices.py:98
+msgid "Квітень | Апрель"
+msgstr "April"
+
+#: diap/models/choices.py:99
+msgid "Травень | Май"
+msgstr "May"
+
+#: diap/models/choices.py:100
+msgid "Червень | Июнь"
+msgstr "June"
+
+#: diap/models/choices.py:101
+msgid "Липень | Июль"
+msgstr "July"
+
+#: diap/models/choices.py:102
+msgid "Серпень | Август"
+msgstr "August"
+
+#: diap/models/choices.py:103
+msgid "Вересень | Сентябрь"
+msgstr "September"
+
+#: diap/models/choices.py:104
+msgid "Жовтень | Октябрь"
+msgstr "October"
+
+#: diap/models/choices.py:105
+msgid "Листопад | Ноябрь"
+msgstr "November"
+
+#: diap/models/choices.py:106
+msgid "Грудень | Декабрь"
+msgstr "December"
+
+#: diap/models/choices.py:111
+msgid "1"
+msgstr ""
+
+#: diap/models/choices.py:112
+msgid "2"
+msgstr ""
+
+#: diap/models/choices.py:113
+msgid "3"
+msgstr ""
+
+#: diap/models/choices.py:114
+msgid "4"
+msgstr ""
+
+#: diap/models/choices.py:115
+msgid "5"
+msgstr ""
+
+#: diap/models/choices.py:116
+msgid "6"
+msgstr ""
+
+#: diap/models/choices.py:117
+msgid "7"
+msgstr ""
+
+#: diap/models/choices.py:118
+msgid "8"
+msgstr ""
+
+#: diap/models/choices.py:119
+msgid "9"
+msgstr ""
+
+#: diap/models/choices.py:120
+msgid "10"
+msgstr ""
+
+#: diap/models/choices.py:121
+msgid "11"
+msgstr ""
+
+#: diap/models/choices.py:122
+msgid "12"
+msgstr ""
+
+#: diap/models/choices.py:123
+msgid "13"
+msgstr ""
+
+#: diap/models/choices.py:124
+msgid "14"
+msgstr ""
+
+#: diap/models/choices.py:125
+msgid "15"
+msgstr ""
+
+#: diap/models/choices.py:126
+msgid "16"
+msgstr ""
+
+#: diap/models/choices.py:127
+msgid "17"
+msgstr ""
+
+#: diap/models/choices.py:128
+msgid "18"
+msgstr ""
+
+#: diap/models/choices.py:129
+msgid "19"
+msgstr ""
+
+#: diap/models/choices.py:130
+msgid "20"
+msgstr ""
+
+#: diap/models/choices.py:131
+msgid "21"
+msgstr ""
+
+#: diap/models/choices.py:132
+msgid "22"
+msgstr ""
+
+#: diap/models/choices.py:133
+msgid "23"
+msgstr ""
+
+#: diap/models/choices.py:134
+msgid "24"
+msgstr ""
+
+#: diap/models/choices.py:135
+msgid "25"
+msgstr ""
+
+#: diap/models/choices.py:136
+msgid "26"
+msgstr ""
+
+#: diap/models/choices.py:137
+msgid "27"
+msgstr ""
+
+#: diap/models/choices.py:138
+msgid "28"
+msgstr ""
+
+#: diap/models/choices.py:139
+msgid "29"
+msgstr ""
+
+#: diap/models/choices.py:140
+msgid "30"
+msgstr ""
+
+#: diap/models/choices.py:141
+msgid "31"
+msgstr ""
+
+#: diap/models/front.py:7 diap/models/front.py:8
+msgid "Новини з втратами РФ"
+msgstr ""
+
+#: diap/models/person.py:20
+msgid "Ім'я"
+msgstr "Name"
+
+#: diap/models/person.py:21
+msgid "Прізвище"
+msgstr "Last name"
+
+#: diap/models/person.py:22
+msgid "По батькові"
+msgstr "middle name"
+
+#: diap/models/person.py:24 diap/templates/diap/person.html:69
+#: diap/templates/diap/person.html:74 diap/templates/diap/persons.html:103
+msgid "Дата народження"
+msgstr "Date of birth"
+
+#: diap/models/person.py:28
+msgid "Рік народження"
+msgstr "Year of birth"
+
+#: diap/models/person.py:32
+msgid "Місяць народження"
+msgstr "Month of birth"
+
+#: diap/models/person.py:36
+msgid "День народження"
+msgstr "Birthday"
+
+#: diap/models/person.py:39 diap/templates/diap/person.html:80
+msgid "Громадянство"
+msgstr "Citizenship"
+
+#: diap/models/person.py:40 diap/templates/diap/person.html:85
+msgid "Паспорт"
+msgstr "Passport"
+
+#: diap/models/person.py:45 diap/templates/diap/person.html:90
+msgid "Індитифікаційний код"
+msgstr "Identification code"
+
+#: diap/models/person.py:47 diap/templates/diap/person.html:95
+msgid "Місце народження"
+msgstr "Place of birth"
+
+#: diap/models/person.py:48 diap/templates/diap/person.html:100
+msgid "Місце проживання"
+msgstr "Place of residence"
+
+#: diap/models/person.py:49 diap/templates/diap/message.html:195
+#: diap/templates/diap/person.html:131
+msgid "Додаткова інформація"
+msgstr "Additional information"
+
+#: diap/models/person.py:50
+msgid "Джерело"
+msgstr "Source"
+
+#: diap/models/person.py:52 diap/models/person.py:58
+#: diap/templates/diap/person.html:230
+msgid "Військове звання"
+msgstr "Military rank"
+
+#: diap/models/person.py:60 diap/templates/diap/person.html:235
+msgid "Посада"
+msgstr "Position"
+
+#: diap/models/person.py:61 diap/templates/diap/person.html:240
+#: diap/templates/diap/persons.html:115
+msgid "Військова частина"
+msgstr "Military base"
+
+#: diap/models/person.py:62 diap/models/person.py:68
+#: diap/templates/diap/person.html:245
+msgid "Рід військ"
+msgstr "Type of army"
+
+#: diap/models/person.py:74 diap/templates/diap/person.html:251
+msgid "Місце знаходження військової частини"
+msgstr "The location of the military base"
+
+#: diap/models/person.py:76 diap/templates/diap/person.html:256
+msgid "Командир"
+msgstr "Commander"
+
+#: diap/models/person.py:83
+msgid "Статус"
+msgstr "Status"
+
+#: diap/models/person.py:86
+msgid "Місце смерті"
+msgstr "Place of death"
+
+#: diap/models/person.py:88
+msgid "Дата смерті"
+msgstr "Date of death"
+
+#: diap/models/person.py:92
+msgid "Рік смерті"
+msgstr "Year of death"
+
+#: diap/models/person.py:96
+msgid "Місяць смерті"
+msgstr "Month of death"
+
+#: diap/models/person.py:100
+msgid "День смерті"
+msgstr "Day of death"
+
+#: diap/models/person.py:102 diap/templates/diap/person.html:121
+msgid "Місце поховання"
+msgstr "Burial place"
+
+#: diap/models/person.py:107
+msgid "Рік поховання"
+msgstr "Year of burial"
+
+#: diap/models/person.py:111
+msgid "Місяць поховання"
+msgstr "Month of burial"
+
+#: diap/models/person.py:115 diap/templates/diap/person.html:126
+msgid "Дата поховання"
+msgstr "Date of burial"
+
+#: diap/models/person.py:118
+msgid "Час створення"
+msgstr "Creation time"
+
+#: diap/models/person.py:119
+msgid "Час останьої зміни"
+msgstr "The time of the last change"
+
+#: diap/models/person.py:125
+msgid "Статус поста"
+msgstr "Post status"
+
+#: diap/models/person.py:132
+msgid "Статус публікації"
+msgstr "Publication status"
+
+#: diap/models/telegram.py:7
+msgid "Користувач Telegram"
+msgstr ""
+
+#: diap/models/telegram.py:8
+msgid "Користувачі Telegram"
+msgstr ""
+
+#: diap/models/telegram.py:11
+msgid "Русский язык"
+msgstr ""
+
+#: diap/models/telegram.py:12
+#, fuzzy
+#| msgid "English"
+msgid "English language"
+msgstr "English"
+
+#: diap/models/telegram.py:13
+msgid "Українська мова"
+msgstr ""
+
+#: diap/models/telegram.py:23
+#, fuzzy
+#| msgid "Реєстрація або вхід"
+msgid "Мова користувача"
+msgstr "Registration or login"
+
+#: diap/templates/diap/base.html:93 diap/templates/diap/base.html:188
+#: diap/templates/diap/base_log_reg.html:93
+#: diap/templates/diap/base_log_reg.html:187
+msgid "Сайт в режимі тестування та наповнення"
+msgstr "The site is in testing and filling mode"
+
+#: diap/templates/diap/base.html:99 diap/templates/diap/base.html:146
+#: diap/templates/diap/base.html:165 diap/templates/diap/base_log_reg.html:98
+#: diap/templates/diap/base_log_reg.html:144
+#: diap/templates/diap/base_log_reg.html:163
+msgid "Українськa"
+msgstr ""
+
+#: diap/templates/diap/base.html:107 diap/templates/diap/base.html:150
+#: diap/templates/diap/base.html:169 diap/templates/diap/base_log_reg.html:106
+#: diap/templates/diap/base_log_reg.html:148
+#: diap/templates/diap/base_log_reg.html:167
+msgid "Русский"
+msgstr ""
+
+#: diap/templates/diap/base.html:115 diap/templates/diap/base_log_reg.html:114
+msgid "Головна"
+msgstr "Main"
+
+#: diap/templates/diap/base.html:118 diap/templates/diap/base_log_reg.html:117
+#: diap/templates/diap/persons.html:16
+msgid "Пошук людей"
+msgstr "Search"
+
+#: diap/templates/diap/base.html:121 diap/templates/diap/base_log_reg.html:120
+#: diap/templates/diap/news.html:31 diap/views.py:294
+msgid "Новини"
+msgstr "News"
+
+#: diap/templates/diap/base.html:124 diap/templates/diap/base_log_reg.html:123
+#: diap/templates/diap/charts.html:18 diap/views.py:457
+msgid "Статистика"
+msgstr "Statistics"
+
+#: diap/templates/diap/base.html:128 diap/templates/diap/base.html:132
+#: diap/templates/diap/base_log_reg.html:127
+#: diap/templates/diap/base_log_reg.html:131 diap/views.py:313
+msgid "Повідомити про загиблого"
+msgstr "Inform of the deceased"
+
+#: diap/templates/diap/base.html:139 diap/templates/diap/base_log_reg.html:137
+msgid "Вихід"
+msgstr "Log out"
+
+#: diap/templates/diap/base.html:155 diap/templates/diap/base_log_reg.html:153
+#: diap/templates/diap/login.html:24 diap/templates/diap/person.html:178
+#: diap/templates/diap/person.html:303 diap/templates/diap/reg.html:23
+msgid "Зареєструватися"
+msgstr "Register"
+
+#: diap/templates/diap/base.html:158 diap/templates/diap/base_log_reg.html:156
+#: diap/templates/diap/login.html:19 diap/templates/diap/person.html:180
+#: diap/templates/diap/person.html:305 diap/views.py:177
+msgid "Вхід"
+msgstr "Log in"
+
+#: diap/templates/diap/base.html:202 diap/templates/diap/base_log_reg.html:201
+msgid "Інформація про нас"
+msgstr "Information about us"
+
+#: diap/templates/diap/base.html:204 diap/templates/diap/base_log_reg.html:203
+msgid ""
+"Ми збираємо факти про втрати російської армії та інших військових формувань, "
+"задіяних у збройній агресії російської федерації проти України. <br> Наша "
+"мета - зібрати максимальну їх кількість."
+msgstr ""
+"We are gathering facts about the losses of the russian army and other "
+"military formations, involved in the armed aggression of the russian "
+"federation against Ukraine. <br> Our goal is to collect the maximum number "
+"of them."
+
+#: diap/templates/diap/base.html:211 diap/templates/diap/base_log_reg.html:210
+msgid "Контакти"
+msgstr "Contacts"
+
+#: diap/templates/diap/base.html:214 diap/templates/diap/base_log_reg.html:213
+msgid "Telegram Bot"
+msgstr ""
+
+#: diap/templates/diap/base.html:218 diap/templates/diap/base_log_reg.html:217
+msgid "Telegram Channel"
+msgstr ""
+
+#: diap/templates/diap/base.html:222 diap/templates/diap/base_log_reg.html:221
+msgid "Twitter"
+msgstr ""
+
+#: diap/templates/diap/charts.html:31
+msgid ""
+"Тут Ви можете знайти статистичні дані про втрати російськох армії та інших "
+"військових формувань, задіяних у збройній агресії російської федерації проти "
+"України, з 2014 року по теперешній час. "
+msgstr ""
+"Here you can find statistical data about the losses of the russian army and "
+"other military formations involved in the armed aggression of the russian "
+"federation against Ukraine from 2014 to the present time."
+
+#: diap/templates/diap/charts.html:262
+msgid "Військові звання"
+msgstr "Military rank"
+
+#: diap/templates/diap/charts.html:263
+msgid "Військово-морські звання"
+msgstr "Navy rank"
+
+#: diap/templates/diap/charts.html:264
+msgid "Військові формування"
+msgstr "Military formations"
+
+#: diap/templates/diap/charts.html:265
+msgid "Вік"
+msgstr "Age"
+
+#: diap/templates/diap/charts.html:266
+msgid "Роки смерті"
+msgstr "Year of death"
+
+#: diap/templates/diap/index.html:38
+msgid "Нами вже зібрано"
+msgstr "We have already collected"
+
+#: diap/templates/diap/index.html:42
+msgid ""
+"фактів, про втрати російської армії та інших військових формувань, задіяних "
+"у збройній агресії російської федерації проти України."
+msgstr ""
+"facts about the losses of the russian army and other military formations "
+"involved in the armed aggression of the russian federation against Ukraine."
+
+#: diap/templates/diap/index.html:45
+msgid "Інформація, викладена на сайті, отримана з відкритих джерел."
+msgstr "The information presented on the site is obtained from open sources."
+
+#: diap/templates/diap/index.html:67 diap/templates/diap/persons.html:40
+msgid "Нові публікації"
+msgstr "New publications"
+
+#: diap/templates/diap/index.html:110
+msgid "Наші Партнери"
+msgstr "Our partners"
+
+#: diap/templates/diap/index.html:206
+msgid "Останні новини"
+msgstr "Latest news"
+
+#: diap/templates/diap/login.html:23 diap/templates/diap/reg.html:24
+msgid "Ввійти"
+msgstr "Sign in"
+
+#: diap/templates/diap/message.html:24
+msgid "Повідомлення про загиблого"
+msgstr "Notification of the deceased"
+
+#: diap/templates/diap/message.html:29 diap/templates/diap/person.html:43
+msgid "Загальна інформація"
+msgstr "General information"
+
+#: diap/templates/diap/message.html:161 diap/templates/diap/person.html:46
+msgid "Служба"
+msgstr "Service"
+
+#: diap/templates/diap/message.html:238
+msgid "Відправити повідомлення"
+msgstr "Send a message"
+
+#: diap/templates/diap/news.html:45
+msgid "Загальні новини"
+msgstr "General news"
+
+#: diap/templates/diap/news.html:59
+msgid "Важливі події"
+msgstr "Important news"
+
+#: diap/templates/diap/person.html:49 diap/templates/diap/person.html:330
+msgid "Джерела"
+msgstr "Sources"
+
+#: diap/templates/diap/person.html:63 diap/templates/diap/person.html:224
+msgid "Інформація"
+msgstr "Information"
+
+#: diap/templates/diap/person.html:105
+msgid "Місце загибелі"
+msgstr "Place of death"
+
+#: diap/templates/diap/person.html:110 diap/templates/diap/person.html:115
+msgid "Дата загибелі"
+msgstr "Date of death"
+
+#: diap/templates/diap/person.html:140 diap/templates/diap/person.html:160
+#: diap/templates/diap/person.html:189 diap/templates/diap/person.html:266
+#: diap/templates/diap/person.html:285 diap/templates/diap/person.html:314
+msgid "Повідомити про помилку"
+msgstr "Report an error"
+
+#: diap/templates/diap/person.html:150 diap/templates/diap/person.html:275
+msgid "Назва помилки"
+msgstr "Error name"
+
+#: diap/templates/diap/person.html:154 diap/templates/diap/person.html:279
+msgid "Опис помилки"
+msgstr "Description of the error"
+
+#: diap/templates/diap/person.html:171 diap/templates/diap/person.html:296
+msgid "Реєстрація або вхід"
+msgstr "Registration or login"
+
+#: diap/templates/diap/person.html:176 diap/templates/diap/person.html:301
+msgid "Будь ласка, здійсніть реєстрацію або вхід за посиланням нижче"
+msgstr "Please register or login using the link below"
+
+#: diap/templates/diap/persons.html:20
+msgid "Фільтр"
+msgstr "Filter"
+
+#: diap/templates/diap/persons.html:29 diap/templates/diap/persons.html:34
+#: diap/views.py:90
+msgid "Пошук"
+msgstr "Search"
+
+#: diap/templates/diap/persons.html:30
+msgid "Введіть П.І.Б. для пошуку"
+msgstr "Enter name and last name to search"
+
+#: diap/templates/diap/persons.html:111 diap/templates/diap/persons.html:117
+msgid "Уточнюється"
+msgstr "The information is being clarified"
+
+#: diap/templates/diap/persons.html:127
+msgid "Людей за вашим запитом не знайдено !"
+msgstr "No people were found for your request!"
+
+#: diap/templates/diap/reg.html:19
+msgid "Реєстрація"
+msgstr "Registration"
+
+#: diap/templates/diap/reg.html:29
+msgid ""
+"Вся інформація, викладена на сайті, є у вільному доступі та її перегляд не "
+"потребує авторизації.<br>Реєстрація на сайті необхідна з метою повідомлення "
+"про помилку в анкеті та двостороннього зв’язку."
+msgstr ""
+"All information posted on the site is freely available and its viewing does "
+"not require authorization.<br>Registration on the site is necessary for the "
+"purpose of reporting an error and two-way communication."
+
+#: diap/views.py:154
+#, fuzzy
+#| msgid "Реєстрація або вхід"
+msgid "Реєстрація користувача"
+msgstr "Registration or login"
+
+#: diap/views.py:480
+#, fuzzy
+#| msgid "Войска национальной гвардии Российской Федерации"
+msgid "Войска нац иональной гвардии Российской Федерации"
+msgstr "Troops of the National Guard of the Russian Federation"
+
+#: diap/views.py:482
+msgid "Незаконные вооружённые формирования."
+msgstr "Illegal armed formations"
+
+#: diap/views.py:485
+msgid "РЯДОВОЙ"
+msgstr "PRIVATE"
+
+#: diap/views.py:486
+msgid "ЕФРЕЙТОР"
+msgstr "CORPORAL"
+
+#: diap/views.py:487
+msgid "МЛАДШИЙ СЕРЖАНТ"
+msgstr "LANCE SERGEANT"
+
+#: diap/views.py:488
+msgid "СЕРЖАНТ"
+msgstr "SERGEANT"
+
+#: diap/views.py:489
+msgid "СТАРШИЙ СЕРЖАНТ"
+msgstr "STAFF SERGEANT"
+
+#: diap/views.py:490
+msgid "СТАРШИНА"
+msgstr "SERGEANT MAJOR"
+
+#: diap/views.py:491
+msgid "ПРАПОРЩИК"
+msgstr "WARRANT OFFICER"
+
+#: diap/views.py:492
+msgid "СТАРШИЙ ПРАПОРЩИК"
+msgstr "SENIOR WARRANT OFFICER"
+
+#: diap/views.py:493
+msgid "МЛАДШИЙ ЛЕЙТЕНАНТ"
+msgstr "SUB-LIEUTENANT"
+
+#: diap/views.py:494
+msgid "ЛЕЙТЕНАНТ"
+msgstr "LIEUTENANT"
+
+#: diap/views.py:495
+msgid "СТАРШИЙ ЛЕЙТЕНАНТ"
+msgstr "SENIOR LIEUTENANT"
+
+#: diap/views.py:496
+msgid "КАПИТАН"
+msgstr "CAPTAIN"
+
+#: diap/views.py:497
+msgid "МАЙОР"
+msgstr "MAJOR"
+
+#: diap/views.py:498
+msgid "ПОДПОЛКОВНИК"
+msgstr "LIEUTENANT COLONEL"
+
+#: diap/views.py:499
+msgid "ПОЛКОВНИК"
+msgstr "COLONEL"
+
+#: diap/views.py:500
+msgid "ГЕНЕРАЛ-МАЙОР"
+msgstr "MAJOR GENERAL"
+
+#: diap/views.py:501
+msgid "ГЕНЕРАЛ-ЛЕЙТЕНАНТ"
+msgstr "LIEUTENANT GENERAL"
+
+#: diap/views.py:502
+msgid "ГЕНЕРАЛ-ПОЛКОВНИК"
+msgstr "COLONEL GENERAL"
+
+#: diap/views.py:503
+msgid "ГЕНЕРАЛ АРМИИ"
+msgstr "ARMY GENERAL"
+
+#: diap/views.py:504
+msgid "МАРШАЛ РОССИЙСКОЙ ФЕДЕРАЦИИ"
+msgstr "MARSHAL OF THE RUSSIAN FEDERATION"
+
+#: diap/views.py:507
+msgid "МАТРОС"
+msgstr "SAILOR"
+
+#: diap/views.py:508
+msgid "СТАРШИЙ МАТРОС"
+msgstr "SENIOR SAILOR"
+
+#: diap/views.py:509
+msgid "СТАРШИНА 2 СТАТЬИ"
+msgstr "PETTY OFFICER OF 2ND ARTICLEs"
+
+#: diap/views.py:510
+msgid "СТАРШИНА 1 СТАТЬИ"
+msgstr "PETTY OFFICER OF 1ST ARTICLE"
+
+#: diap/views.py:511
+msgid "ГЛАВНЫЙ СТАРШИНА"
+msgstr "CHIEF SERGEANT MAJOR"
+
+#: diap/views.py:512
+msgid "ГЛАВНЫЙ КОРАБЕЛЬНЫЙ СТАРШИНА"
+msgstr "CHIEF SHIP SERGEANT MAJOR"
+
+#: diap/views.py:513
+msgid "МИЧМАН"
+msgstr "MIDSHIPMAN"
+
+#: diap/views.py:514
+msgid "СТАРШИЙ МИЧМАН"
+msgstr "SENIOR MIDSHIPMAN"
+
+#: diap/views.py:515
+msgid "КАПИТАН-ЛЕЙТЕНАНТ"
+msgstr "LIEUTENANT COMMANDER"
+
+#: diap/views.py:516
+msgid "КАПИТАН 3 РАНГА"
+msgstr "CAPTAIN OF 3RD RANK"
+
+#: diap/views.py:517
+msgid "КАПИТАН 2 РАНГА"
+msgstr "CAPTAIN OF 2ND RANK"
+
+#: diap/views.py:518
+msgid "КАПИТАН 1 РАНГА"
+msgstr "CAPTAIN OF 1ST RANK"
+
+#: diap/views.py:519
+msgid "КОНТР-АДМИРАЛ"
+msgstr "REAR-ADMIRAL"
+
+#: diap/views.py:520
+msgid "ВИЦЕ-АДМИРАЛ"
+msgstr "VICE ADMIRAL"
+
+#: diap/views.py:521
+msgid "АДМИРАЛ\""
+msgstr "ADMIRAL\""
+
+#: diap/views.py:522
+msgid "АДМИРАЛ ФЛОТА"
+msgstr "FLEET ADMIRAL"
+
+#: diap/views.py:548
+msgid "Від 18 до 25"
+msgstr "From 18 to 25"
+
+#: diap/views.py:549
+msgid "Від 25 до 35"
+msgstr "From 25 to 35"
+
+#: diap/views.py:550
+msgid "Від 35 до 45"
+msgstr "From 35 to 45"
+
+#: diap/views.py:551
+msgid "Від 45 до 55"
+msgstr "From 45 to 55"
+
+#: venv/Lib/site-packages/django/contrib/messages/apps.py:15
+msgid "Messages"
+msgstr ""
+
+#: venv/Lib/site-packages/django/contrib/sitemaps/apps.py:8
+msgid "Site Maps"
+msgstr ""
+
+#: venv/Lib/site-packages/django/contrib/staticfiles/apps.py:9
+msgid "Static Files"
+msgstr ""
+
+#: venv/Lib/site-packages/django/contrib/syndication/apps.py:7
+msgid "Syndication"
+msgstr ""
+
+#. Translators: String used to replace omitted page numbers in elided page
+#. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
+#: venv/Lib/site-packages/django/core/paginator.py:30
+msgid "…"
+msgstr ""
+
+#: venv/Lib/site-packages/django/core/paginator.py:50
+msgid "That page number is not an integer"
+msgstr ""
+
+#: venv/Lib/site-packages/django/core/paginator.py:52
+msgid "That page number is less than 1"
+msgstr ""
+
+#: venv/Lib/site-packages/django/core/paginator.py:57
+msgid "That page contains no results"
+msgstr ""
+
+#: venv/Lib/site-packages/django/core/validators.py:22
+msgid "Enter a valid value."
+msgstr ""
+
+#: venv/Lib/site-packages/django/core/validators.py:104
+#: venv/Lib/site-packages/django/forms/fields.py:751
+msgid "Enter a valid URL."
+msgstr ""
+
+#: venv/Lib/site-packages/django/core/validators.py:164
+msgid "Enter a valid integer."
+msgstr ""
+
+#: venv/Lib/site-packages/django/core/validators.py:175
+msgid "Enter a valid email address."
+msgstr ""
+
+#. Translators: "letters" means latin letters: a-z and A-Z.
+#: venv/Lib/site-packages/django/core/validators.py:256
+msgid ""
+"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+
+#: venv/Lib/site-packages/django/core/validators.py:264
+msgid ""
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
+"hyphens."
+msgstr ""
+
+#: venv/Lib/site-packages/django/core/validators.py:276
+#: venv/Lib/site-packages/django/core/validators.py:284
+#: venv/Lib/site-packages/django/core/validators.py:313
+msgid "Enter a valid IPv4 address."
+msgstr ""
+
+#: venv/Lib/site-packages/django/core/validators.py:293
+#: venv/Lib/site-packages/django/core/validators.py:314
+msgid "Enter a valid IPv6 address."
+msgstr ""
+
+#: venv/Lib/site-packages/django/core/validators.py:305
+#: venv/Lib/site-packages/django/core/validators.py:312
+msgid "Enter a valid IPv4 or IPv6 address."
+msgstr ""
+
+#: venv/Lib/site-packages/django/core/validators.py:348
+msgid "Enter only digits separated by commas."
+msgstr ""
+
+#: venv/Lib/site-packages/django/core/validators.py:354
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+
+#: venv/Lib/site-packages/django/core/validators.py:389
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr ""
+
+#: venv/Lib/site-packages/django/core/validators.py:398
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr ""
+
+#: venv/Lib/site-packages/django/core/validators.py:407
+#, python-format
+msgid "Ensure this value is a multiple of step size %(limit_value)s."
+msgstr ""
+
+#: venv/Lib/site-packages/django/core/validators.py:417
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/Lib/site-packages/django/core/validators.py:435
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/Lib/site-packages/django/core/validators.py:458
+#: venv/Lib/site-packages/django/forms/fields.py:347
+#: venv/Lib/site-packages/django/forms/fields.py:386
+msgid "Enter a number."
+msgstr ""
+
+#: venv/Lib/site-packages/django/core/validators.py:460
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/Lib/site-packages/django/core/validators.py:465
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/Lib/site-packages/django/core/validators.py:470
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/Lib/site-packages/django/core/validators.py:539
+#, python-format
+msgid ""
+"File extension “%(extension)s” is not allowed. Allowed extensions are: "
+"%(allowed_extensions)s."
+msgstr ""
+
+#: venv/Lib/site-packages/django/core/validators.py:600
+msgid "Null characters are not allowed."
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/base.py:1401
+#: venv/Lib/site-packages/django/forms/models.py:899
+msgid "and"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/base.py:1403
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/constraints.py:17
+#, python-format
+msgid "Constraint “%(name)s” is violated."
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:129
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:130
+msgid "This field cannot be null."
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:131
+msgid "This field cannot be blank."
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:132
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr ""
+
+#. Translators: The 'lookup_type' is one of 'date', 'year' or
+#. 'month'. Eg: "Title must be unique for pub_date year"
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:136
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:174
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:1065
+#, python-format
+msgid "“%(value)s” value must be either True or False."
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:1066
+#, python-format
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:1068
+msgid "Boolean (Either True or False)"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:1118
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:1222
+msgid "Comma-separated integers"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:1323
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:1327
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:1462
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:1331
+msgid "Date (without time)"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:1458
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
+"uuuuuu]][TZ] format."
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:1466
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+"[TZ]) but it is an invalid date/time."
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:1471
+msgid "Date (with time)"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:1595
+#, python-format
+msgid "“%(value)s” value must be a decimal number."
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:1597
+msgid "Decimal number"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:1754
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
+"uuuuuu] format."
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:1758
+msgid "Duration"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:1810
+msgid "Email address"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:1835
+msgid "File path"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:1913
+#, python-format
+msgid "“%(value)s” value must be a float."
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:1915
+msgid "Floating point number"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:1955
+#, python-format
+msgid "“%(value)s” value must be an integer."
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:1957
+msgid "Integer"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:2049
+msgid "Big (8 byte) integer"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:2066
+msgid "Small integer"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:2074
+msgid "IPv4 address"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:2105
+msgid "IP address"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:2198
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:2199
+#, python-format
+msgid "“%(value)s” value must be either None, True or False."
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:2201
+msgid "Boolean (Either True, False or None)"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:2252
+msgid "Positive big integer"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:2267
+msgid "Positive integer"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:2282
+msgid "Positive small integer"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:2298
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:2334
+msgid "Text"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:2409
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:2413
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:2417
+msgid "Time"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:2525
+msgid "URL"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:2549
+msgid "Raw binary data"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:2614
+#, python-format
+msgid "“%(value)s” is not a valid UUID."
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/__init__.py:2616
+msgid "Universally unique identifier"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/files.py:231
+msgid "File"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/files.py:391
+msgid "Image"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/json.py:18
+msgid "A JSON object"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/json.py:20
+msgid "Value must be valid JSON."
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/related.py:918
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r does not exist."
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/related.py:920
+msgid "Foreign Key (type determined by related field)"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/related.py:1227
+msgid "One-to-one relationship"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/related.py:1284
+#, python-format
+msgid "%(from)s-%(to)s relationship"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/related.py:1286
+#, python-format
+msgid "%(from)s-%(to)s relationships"
+msgstr ""
+
+#: venv/Lib/site-packages/django/db/models/fields/related.py:1334
+msgid "Many-to-many relationship"
+msgstr ""
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to the label
+#: venv/Lib/site-packages/django/forms/boundfield.py:176
+msgid ":?.!"
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/fields.py:91
+msgid "This field is required."
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/fields.py:298
+msgid "Enter a whole number."
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/fields.py:467
+#: venv/Lib/site-packages/django/forms/fields.py:1240
+msgid "Enter a valid date."
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/fields.py:490
+#: venv/Lib/site-packages/django/forms/fields.py:1241
+msgid "Enter a valid time."
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/fields.py:517
+msgid "Enter a valid date/time."
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/fields.py:551
+msgid "Enter a valid duration."
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/fields.py:552
+#, python-brace-format
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/fields.py:618
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/fields.py:619
+msgid "No file was submitted."
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/fields.py:620
+msgid "The submitted file is empty."
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/fields.py:622
+#, python-format
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/Lib/site-packages/django/forms/fields.py:627
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/fields.py:693
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/fields.py:856
+#: venv/Lib/site-packages/django/forms/fields.py:948
+#: venv/Lib/site-packages/django/forms/models.py:1572
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/fields.py:950
+#: venv/Lib/site-packages/django/forms/fields.py:1069
+#: venv/Lib/site-packages/django/forms/models.py:1570
+msgid "Enter a list of values."
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/fields.py:1070
+msgid "Enter a complete value."
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/fields.py:1309
+msgid "Enter a valid UUID."
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/fields.py:1339
+msgid "Enter a valid JSON."
+msgstr ""
+
+#. Translators: This is the default suffix added to form field labels
+#: venv/Lib/site-packages/django/forms/forms.py:98
+msgid ":"
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/forms.py:248
+#: venv/Lib/site-packages/django/forms/forms.py:332
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/formsets.py:63
+#, python-format
+msgid ""
+"ManagementForm data is missing or has been tampered with. Missing fields: "
+"%(field_names)s. You may need to file a bug report if the issue persists."
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/formsets.py:67
+#, python-format
+msgid "Please submit at most %(num)d form."
+msgid_plural "Please submit at most %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/Lib/site-packages/django/forms/formsets.py:72
+#, python-format
+msgid "Please submit at least %(num)d form."
+msgid_plural "Please submit at least %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/Lib/site-packages/django/forms/formsets.py:483
+#: venv/Lib/site-packages/django/forms/formsets.py:490
+msgid "Order"
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/formsets.py:496
+msgid "Delete"
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/models.py:892
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/models.py:897
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/models.py:904
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/models.py:913
+msgid "Please correct the duplicate values below."
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/models.py:1344
+msgid "The inline value did not match the parent instance."
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/models.py:1435
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/models.py:1574
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/utils.py:226
+#, python-format
+msgid ""
+"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/widgets.py:439
+msgid "Clear"
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/widgets.py:440
+msgid "Currently"
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/widgets.py:441
+msgid "Change"
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/widgets.py:769
+msgid "Unknown"
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/widgets.py:770
+msgid "Yes"
+msgstr ""
+
+#: venv/Lib/site-packages/django/forms/widgets.py:771
+msgid "No"
+msgstr ""
+
+#. Translators: Please do not add spaces around commas.
+#: venv/Lib/site-packages/django/template/defaultfilters.py:853
+msgid "yes,no,maybe"
+msgstr ""
+
+#: venv/Lib/site-packages/django/template/defaultfilters.py:883
+#: venv/Lib/site-packages/django/template/defaultfilters.py:900
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/Lib/site-packages/django/template/defaultfilters.py:902
+#, python-format
+msgid "%s KB"
+msgstr ""
+
+#: venv/Lib/site-packages/django/template/defaultfilters.py:904
+#, python-format
+msgid "%s MB"
+msgstr ""
+
+#: venv/Lib/site-packages/django/template/defaultfilters.py:906
+#, python-format
+msgid "%s GB"
+msgstr ""
+
+#: venv/Lib/site-packages/django/template/defaultfilters.py:908
+#, python-format
+msgid "%s TB"
+msgstr ""
+
+#: venv/Lib/site-packages/django/template/defaultfilters.py:910
+#, python-format
+msgid "%s PB"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dateformat.py:77
+msgid "p.m."
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dateformat.py:78
+msgid "a.m."
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dateformat.py:83
+msgid "PM"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dateformat.py:84
+msgid "AM"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dateformat.py:155
+msgid "midnight"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dateformat.py:157
+msgid "noon"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:7
+msgid "Monday"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:8
+msgid "Tuesday"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:9
+msgid "Wednesday"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:10
+msgid "Thursday"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:11
+msgid "Friday"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:12
+msgid "Saturday"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:13
+msgid "Sunday"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:16
+msgid "Mon"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:17
+msgid "Tue"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:18
+msgid "Wed"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:19
+msgid "Thu"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:20
+msgid "Fri"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:21
+msgid "Sat"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:22
+msgid "Sun"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:25
+msgid "January"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:26
+msgid "February"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:27
+msgid "March"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:28
+msgid "April"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:29
+msgid "May"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:30
+msgid "June"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:31
+msgid "July"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:32
+msgid "August"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:33
+msgid "September"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:34
+msgid "October"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:35
+msgid "November"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:36
+msgid "December"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:39
+msgid "jan"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:40
+msgid "feb"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:41
+msgid "mar"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:42
+msgid "apr"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:43
+msgid "may"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:44
+msgid "jun"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:45
+msgid "jul"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:46
+msgid "aug"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:47
+msgid "sep"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:48
+msgid "oct"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:49
+msgid "nov"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:50
+msgid "dec"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:53
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:54
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:55
+msgctxt "abbrev. month"
+msgid "March"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:56
+msgctxt "abbrev. month"
+msgid "April"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:57
+msgctxt "abbrev. month"
+msgid "May"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:58
+msgctxt "abbrev. month"
+msgid "June"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:59
+msgctxt "abbrev. month"
+msgid "July"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:60
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:61
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:62
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:63
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:64
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:67
+msgctxt "alt. month"
+msgid "January"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:68
+msgctxt "alt. month"
+msgid "February"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:69
+msgctxt "alt. month"
+msgid "March"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:70
+msgctxt "alt. month"
+msgid "April"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:71
+msgctxt "alt. month"
+msgid "May"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:72
+msgctxt "alt. month"
+msgid "June"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:73
+msgctxt "alt. month"
+msgid "July"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:74
+msgctxt "alt. month"
+msgid "August"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:75
+msgctxt "alt. month"
+msgid "September"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:76
+msgctxt "alt. month"
+msgid "October"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:77
+msgctxt "alt. month"
+msgid "November"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/dates.py:78
+msgctxt "alt. month"
+msgid "December"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/ipv6.py:8
+msgid "This is not a valid IPv6 address."
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/text.py:76
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s…"
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/text.py:252
+msgid "or"
+msgstr ""
+
+#. Translators: This string is used as a separator between list elements
+#: venv/Lib/site-packages/django/utils/text.py:271
+#: venv/Lib/site-packages/django/utils/timesince.py:94
+msgid ", "
+msgstr ""
+
+#: venv/Lib/site-packages/django/utils/timesince.py:9
+#, python-format
+msgid "%(num)d year"
+msgid_plural "%(num)d years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/Lib/site-packages/django/utils/timesince.py:10
+#, python-format
+msgid "%(num)d month"
+msgid_plural "%(num)d months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/Lib/site-packages/django/utils/timesince.py:11
+#, python-format
+msgid "%(num)d week"
+msgid_plural "%(num)d weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/Lib/site-packages/django/utils/timesince.py:12
+#, python-format
+msgid "%(num)d day"
+msgid_plural "%(num)d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/Lib/site-packages/django/utils/timesince.py:13
+#, python-format
+msgid "%(num)d hour"
+msgid_plural "%(num)d hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/Lib/site-packages/django/utils/timesince.py:14
+#, python-format
+msgid "%(num)d minute"
+msgid_plural "%(num)d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/Lib/site-packages/django/views/csrf.py:111
+msgid "Forbidden"
+msgstr ""
+
+#: venv/Lib/site-packages/django/views/csrf.py:112
+msgid "CSRF verification failed. Request aborted."
+msgstr ""
+
+#: venv/Lib/site-packages/django/views/csrf.py:116
+msgid ""
+"You are seeing this message because this HTTPS site requires a “Referer "
+"header” to be sent by your web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+
+#: venv/Lib/site-packages/django/views/csrf.py:122
+msgid ""
+"If you have configured your browser to disable “Referer” headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for “same-"
+"origin” requests."
+msgstr ""
+
+#: venv/Lib/site-packages/django/views/csrf.py:127
+msgid ""
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
+"including the “Referrer-Policy: no-referrer” header, please remove them. The "
+"CSRF protection requires the “Referer” header to do strict referer checking. "
+"If you’re concerned about privacy, use alternatives like <a rel=\"noreferrer"
+"\" …> for links to third-party sites."
+msgstr ""
+
+#: venv/Lib/site-packages/django/views/csrf.py:136
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+
+#: venv/Lib/site-packages/django/views/csrf.py:142
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for “same-origin” requests."
+msgstr ""
+
+#: venv/Lib/site-packages/django/views/csrf.py:148
+msgid "More information is available with DEBUG=True."
+msgstr ""
+
+#: venv/Lib/site-packages/django/views/generic/dates.py:44
+msgid "No year specified"
+msgstr ""
+
+#: venv/Lib/site-packages/django/views/generic/dates.py:64
+#: venv/Lib/site-packages/django/views/generic/dates.py:115
+#: venv/Lib/site-packages/django/views/generic/dates.py:214
+msgid "Date out of range"
+msgstr ""
+
+#: venv/Lib/site-packages/django/views/generic/dates.py:94
+msgid "No month specified"
+msgstr ""
+
+#: venv/Lib/site-packages/django/views/generic/dates.py:147
+msgid "No day specified"
+msgstr ""
+
+#: venv/Lib/site-packages/django/views/generic/dates.py:194
+msgid "No week specified"
+msgstr ""
+
+#: venv/Lib/site-packages/django/views/generic/dates.py:349
+#: venv/Lib/site-packages/django/views/generic/dates.py:380
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr ""
+
+#: venv/Lib/site-packages/django/views/generic/dates.py:652
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because %(class_name)s."
+"allow_future is False."
+msgstr ""
+
+#: venv/Lib/site-packages/django/views/generic/dates.py:692
+#, python-format
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr ""
+
+#: venv/Lib/site-packages/django/views/generic/detail.py:56
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr ""
+
+#: venv/Lib/site-packages/django/views/generic/list.py:70
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr ""
+
+#: venv/Lib/site-packages/django/views/generic/list.py:77
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr ""
+
+#: venv/Lib/site-packages/django/views/generic/list.py:169
+#, python-format
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr ""
+
+#: venv/Lib/site-packages/django/views/static.py:38
+msgid "Directory indexes are not allowed here."
+msgstr ""
+
+#: venv/Lib/site-packages/django/views/static.py:40
+#, python-format
+msgid "“%(path)s” does not exist"
+msgstr ""
+
+#: venv/Lib/site-packages/django/views/static.py:79
+#, python-format
+msgid "Index of %(directory)s"
+msgstr ""
+
+#: venv/Lib/site-packages/django/views/templates/default_urlconf.html:7
+#: venv/Lib/site-packages/django/views/templates/default_urlconf.html:221
+msgid "The install worked successfully! Congratulations!"
+msgstr ""
+
+#: venv/Lib/site-packages/django/views/templates/default_urlconf.html:207
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+
+#: venv/Lib/site-packages/django/views/templates/default_urlconf.html:222
+#, python-format
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
+"\">DEBUG=True</a> is in your settings file and you have not configured any "
+"URLs."
+msgstr ""
+
+#: venv/Lib/site-packages/django/views/templates/default_urlconf.html:230
+msgid "Django Documentation"
+msgstr ""
+
+#: venv/Lib/site-packages/django/views/templates/default_urlconf.html:231
+msgid "Topics, references, &amp; how-to’s"
+msgstr ""
+
+#: venv/Lib/site-packages/django/views/templates/default_urlconf.html:239
+msgid "Tutorial: A Polling App"
+msgstr ""
+
+#: venv/Lib/site-packages/django/views/templates/default_urlconf.html:240
+msgid "Get started with Django"
+msgstr ""
+
+#: venv/Lib/site-packages/django/views/templates/default_urlconf.html:248
+msgid "Django Community"
+msgstr ""
+
+#: venv/Lib/site-packages/django/views/templates/default_urlconf.html:249
+msgid "Connect, get help, or contribute"
+msgstr ""
+
+#: venv/Lib/site-packages/django_admin_listfilter_dropdown/templates/django_admin_listfilter_dropdown/dropdown_filter.html:3
+#, python-format
+msgid " By %(filter_title)s "
+msgstr ""
+
+#: venv/Lib/site-packages/image_cropping/backends/base.py:53
+#, python-brace-format
+msgid "There's no widget registered to the class {class_name}"
+msgstr ""
+
+#: venv/Lib/site-packages/image_cropping/utils.py:28
+msgid "Can't retrieve the image backend '{}'. Message: '{}'."
+msgstr ""
+
+#~ msgid "Звання"
+#~ msgstr "Ranks"
+
+#~ msgid "Бот"
+#~ msgstr "Bot"
+
+#~ msgid ""
+#~ "Ми збираємо дані про солдат армії РФ, які загинули у спецоперації в "
+#~ "Україні. Наша ціль - зібрати максимальну їх кількість."
+#~ msgstr ""
+#~ "We are collecting data on soldiers of the Russian army who died in a "
+#~ "special operation in Ukraine.Our goal is to collect the maximum number of "
+#~ "them."
+
+#~ msgid "Телеграм канал"
+#~ msgstr "Telegram channel"
+
+#~ msgid "Твіттер"
+#~ msgstr "Twitter"
+
+#~ msgid "Інформаційний портал"
+#~ msgstr "Information portal"
+
+#~ msgid "Міністерство внутрішніх справ України"
+#~ msgstr "Ministry of Internal Affairs of Ukraine"
+
+#~ msgid "Единый центр приема обращений военнослужащих РФ по сдаче в плен"
+#~ msgstr ""
+#~ "The unified reception center addressed by russian servicemen for surrender"
+
+#~ msgid "Дата народження:"
+#~ msgstr "Date of birth:"
+
+#~ msgid "Військова частина:"
+#~ msgstr "Military base:"
+
+#~ msgid "Language"
+#~ msgstr "Language"

@@ -1,0 +1,26 @@
+#DB
+DATABASE_NAME=war_crime
+DATABASE_USER=war_crime_user
+DATABASE_PASSWORD=3232322ddd
+DATABASE_HOST=poternet_db
+DATABASE_PORT=5432
+
+# Мають знати розробники, або взяти в CI Variables проекту
+SECRET_KEY_SC=
+
+CSRF_TRUSTED_ORIGINS=https://127.0.0.1
+ALLOWED_HOSTS=127.0.0.1
+DEBUG=1
+
+# EMAIL - прописані default у коді. По хорошому треба прибрати звідтіля
+#EMAIL_HOST=
+#EMAIL_HOST_USER=
+#EMAIL_HOST_PASSWORD=
+#EMAIL_PORT=
+#EMAIL_USE_TLS=
+#EMAIL_USE_SSL=
+
+# Змінні для контейнера postgre-db (не спрацювало)
+# POSTGRES_USER=$DATABASE_USER
+# POSTGRES_PASSWORD=$DATABASE_PASSWORD
+# POSTGRES_DB=$DATABASE_NAME
